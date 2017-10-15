@@ -11,6 +11,7 @@ public class ChessGUI  extends JFrame implements ActionListener{
 	private static final int HEIGHT = 700;
 	private static final int WIDTH = 600;
 	
+	// The image of the chessboard we will use
 	private URL url = ChessGUI.class.getResource("/resources/chessboard.png");
 	
 	/**
