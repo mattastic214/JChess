@@ -8,7 +8,7 @@ import java.net.URL;
 import javax.swing.*;
 
 /**
- * This class' purporse is to properly initialize the GUI and its features
+ * This class's purpose is to properly initialize the GUI and its features
  * @author matta
  *
  */
