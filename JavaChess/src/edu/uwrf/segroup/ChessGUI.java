@@ -1,6 +1,7 @@
 package edu.uwrf.segroup;
 
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.event.*;
 import java.net.URL;
 
@@ -20,6 +21,16 @@ public class ChessGUI  extends JFrame implements ActionListener{
 	private URL url = ChessGUI.class.getResource("/resources/chessboard.png");
 	private ImageIcon board = new ImageIcon(url);
 	private JLabel boardIcon = new JLabel(board);
+	
+	private JButton sendButton = new JButton("Send");
+	private JButton confirmButton = new JButton("Confirm Move");
+	private JButton originButton = new JButton("Send Piece Back To Place");
+	
+	private JTextArea chatDisplay = new JTextArea(10, 3);
+	private JTextArea chatEnter = new JTextArea(10,3);
+	
+	private JPanel boardPanel = new JPanel(new BorderLayout());
+	private JPanel ChatPanel = new JPanel(new GridLayout(2, 1));
 	
 	/**
 	 * The null constructor for the GUI
