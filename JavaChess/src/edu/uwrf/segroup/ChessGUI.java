@@ -8,7 +8,7 @@ import java.net.URL;
 import javax.swing.*;
 
 /**
- * This class' purporse is to properly initialize the GUI and its features
+ * This class's purpose is to properly initialize the GUI and its features
  * @author matta
  *
  */
@@ -30,7 +30,7 @@ public class ChessGUI  extends JFrame implements ActionListener{
 	private JTextArea chatEnter = new JTextArea(10,3);
 	
 	private JPanel boardPanel = new JPanel(new BorderLayout());
-	private JPanel ChatPanel = new JPanel(new GridLayout(2, 1));
+	private JPanel chatPanel = new JPanel(new GridLayout(2, 1));
 	
 	/**
 	 * The null constructor for the GUI
@@ -47,6 +47,10 @@ public class ChessGUI  extends JFrame implements ActionListener{
 	
 	private void initializeGuiComponents() {
 		
+		
+		
+		add(boardPanel, BorderLayout.CENTER);
+		add(chatPanel, BorderLayout.WEST);
 	}
 	
 	
