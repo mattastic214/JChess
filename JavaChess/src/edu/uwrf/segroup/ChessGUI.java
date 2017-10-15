@@ -47,7 +47,9 @@ public class ChessGUI  extends JFrame implements ActionListener{
 	
 	private void initializeGuiComponents() {
 		
-		
+		boardPanel.add(boardIcon);
+		chatPanel.add(chatDisplay);
+		chatPanel.add(chatEnter);
 		
 		add(boardPanel, BorderLayout.CENTER);
 		add(chatPanel, BorderLayout.WEST);
