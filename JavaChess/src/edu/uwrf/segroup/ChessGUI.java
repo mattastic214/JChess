@@ -41,7 +41,7 @@ public class ChessGUI  extends JFrame implements ActionListener{
 		setVisible(true);
 		setSize(HEIGHT, WIDTH);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setLayout(new BorderLayout());
+		setLayout(new GridLayout(1, 2));
 		initializeGuiComponents();
 	}
 	
@@ -51,8 +51,8 @@ public class ChessGUI  extends JFrame implements ActionListener{
 		chatPanel.add(chatDisplay);
 		chatPanel.add(chatEnter);
 		
-		add(boardPanel, BorderLayout.CENTER);
-		add(chatPanel, BorderLayout.WEST);
+		add(boardPanel);
+		add(chatPanel);
 	}
 	
 	
