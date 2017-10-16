@@ -55,6 +55,8 @@ public class ChessGUI  extends JFrame implements ActionListener{
 		add(chatPanel, BorderLayout.WEST);
 	}
 	
+	// Testing, by Charles Thao
+	
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
