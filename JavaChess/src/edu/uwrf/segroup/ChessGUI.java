@@ -16,6 +16,7 @@ public class ChessGUI  extends JFrame implements ActionListener{
 
 	private static final int HEIGHT = 900;
 	private static final int WIDTH = 1500;
+	private static final int GAP = 3;
 	
 	// The image of the chessboard we will use
 	private URL url = ChessGUI.class.getResource("/resources/chessboard.png");
@@ -30,7 +31,7 @@ public class ChessGUI  extends JFrame implements ActionListener{
 	private JTextArea chatEnter = new JTextArea(10, 3);
 	
 	private JPanel boardPanel = new JPanel();
-	private JPanel chatPanel = new JPanel(new GridLayout(2,1, 3, 3));
+	private JPanel chatPanel = new JPanel(new GridLayout(2,1, GAP, GAP));
 	
 	/**
 	 * The null constructor for the GUI
