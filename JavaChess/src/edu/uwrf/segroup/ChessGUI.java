@@ -27,10 +27,10 @@ public class ChessGUI  extends JFrame implements ActionListener{
 	private JButton originButton = new JButton("Send Piece Back To Place");
 	
 	private JTextArea chatDisplay = new JTextArea(10, 3);
-	private JTextArea chatEnter = new JTextArea(10,3);
+	private JTextArea chatEnter = new JTextArea(10, 3);
 	
-	private JPanel boardPanel = new JPanel(new BorderLayout());
-	private JPanel chatPanel = new JPanel(new GridLayout(2, 1));
+	private JPanel boardPanel = new JPanel();
+	private JPanel chatPanel = new JPanel(new GridLayout(2,1));
 	
 	/**
 	 * The null constructor for the GUI
