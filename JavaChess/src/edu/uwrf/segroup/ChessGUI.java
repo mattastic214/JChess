@@ -14,8 +14,9 @@ import javax.swing.*;
  */
 public class ChessGUI  extends JFrame implements ActionListener{
 
-	private static final int HEIGHT = 700;
-	private static final int WIDTH = 600;
+	private static final int HEIGHT = 900;
+	private static final int WIDTH = 1500;
+	private static final int GAP = 3;
 	
 	// The image of the chessboard we will use
 	private URL url = ChessGUI.class.getResource("/resources/chessboard.png");
@@ -30,7 +31,7 @@ public class ChessGUI  extends JFrame implements ActionListener{
 	private JTextArea chatEnter = new JTextArea(10, 3);
 	
 	private JPanel boardPanel = new JPanel();
-	private JPanel chatPanel = new JPanel(new GridLayout(2,1));
+	private JPanel chatPanel = new JPanel(new GridLayout(2,1, GAP, GAP));
 	
 	/**
 	 * The null constructor for the GUI
@@ -39,20 +40,30 @@ public class ChessGUI  extends JFrame implements ActionListener{
 		
 		super("Chess Lounge");
 		setVisible(true);
-		setSize(HEIGHT, WIDTH);
+		setSize(WIDTH, HEIGHT);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setLayout(new BorderLayout());
+		setLayout(new GridLayout(1, 2));
+		
+		addBoardPanel();
 		initializeGuiComponents();
+		
+		
+	}
+	
+	private void addBoardPanel() {
+		
+		boardPanel.add(boardIcon);
+		add(boardPanel);
 	}
 	
 	private void initializeGuiComponents() {
 		
-		boardPanel.add(boardIcon);
+		
 		chatPanel.add(chatDisplay);
 		chatPanel.add(chatEnter);
 		
-		add(boardPanel, BorderLayout.CENTER);
-		add(chatPanel, BorderLayout.WEST);
+		
+		add(chatPanel);
 	}
 	
 	// Testing, by Charles Thao
