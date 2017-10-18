@@ -40,7 +40,7 @@ public class ChessGUI extends JFrame implements Runnable {
 	private JTextArea chatEnter = new JTextArea(10, 3);
 
 	
-	private JPanel boardPanel = new JPanel();
+	private JPanel boardPanel = new JPanel(null);
 	private JPanel chatPanel = new JPanel(new GridLayout(2, 1, GAP, GAP));
 	//	Declare Variables --END--
 	/**
@@ -65,6 +65,8 @@ public class ChessGUI extends JFrame implements Runnable {
 	private void addBoardPanel() {
 		
 		boardPanel.add(boardIcon);
+		boardIcon.setLocation(0, 10);
+		boardIcon.setSize(720, 720);
 		add(boardPanel);
 
 		
