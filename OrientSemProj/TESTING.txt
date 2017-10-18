@@ -1,0 +1,106 @@
+Welcome to Examinator 2016 Created by Charles Thao and Alex Eastman
+
+Please enter the name of the question pool file: a
+
+***Pool file loading error!***
+Please check the question-pool file and re-enter the file name: 
+
+***Pool file loading error!***
+Please check the question-pool file and re-enter the file name: Blarg!
+
+***Pool file loading error!***
+Please check the question-pool file and re-enter the file name: Blarg!.txt
+
+***Pool file loading error!***
+Please check the question-pool file and re-enter the file name: .txt
+
+***Pool file loading error!***
+Please check the question-pool file and re-enter the file name: Exam.txt
+
+***Pool file loading error!***
+Please check the question-pool file and re-enter the file name: QuestionPool.txt
+
+Checking file: correct!
+
+Error at Line 2!
+multiple@a@2@What type would you use to represent the diameter of a coin in inches?@6@d@int@long@size@double@string@char *
+Problem: Input Mismatch!
+Error at Line 3!
+multiple@1@3@Which of the following values of n would mane (n < 0 && n > 10) true?@6@z@-2@0@5@10@14@None: it is always false.
+Problem: Correct Choice is not found in the list of Choices!
+Error at Line 6!
+multiple@1@6@In the statement value = scores[k], what do we call k?@6@bb@Element@Index@Pointer@Array@Exponent@Reference
+Problem: Correct Choice is not a char!
+Error at Line 7!
+multiple@1@7@What is the name for the region of memory used for dynamic allocation?@7@e@Global@Local@Array@Int@Heap@Stack
+Problem: Number of Choices and its Actual Number Choices do not Match!
+Error at Line 12!
+multiple@1@9@When calling a member function like register1.add_item(1.95), how does add_item get access to the register1 object?@6@c@As a global variable.@As an explicit parameter.@As the implicit parameter.@It only has a copy of register1.@It must be defined inside the function register1.@It does not have access to the object.@Blarg!
+Problem: Number of Choices and its Actual Number Choices do not Match!
+Error at Line 26!
+long@5@a@List at least two reasons to use a reference parameter. List at least one reason to use a value parameter.@You would use a reference parameter if you need to change the argument and have the change reflected in the caller (for example, if your function has more than one output, so the return value isn't sufficient), or if you need to get the argument itself instead of a copy of it (for example, in a copy constructor). You would use a value parameter in most other cases: in particular, if you need to modify the parameter but not change the original argument, you should use a value parameter. Also, if your function needs to accept a literal argument, it must use a value parameter, because references parameters only accept variables, not literals.
+Problem: Input Mismatch!
+How many questions should the exam have?
+Blarg!
+Sorry, you entered invalid input. Integers please!
+Please re-enter filter!
+How many questions should the exam have?
+0
+Sorry, you selected invalid number of questions.
+Please re-enter filter!
+How many questions should the exam have?
+40
+Sorry, you selected invalid number of questions.
+Please re-enter filter!
+How many questions should the exam have?
+10
+What is the minimum chapter to cover in the exam?
+0
+Sorry, minimum chapter cannot by 0 or below.
+Please re-enter filter!
+How many questions should the exam have?
+10
+What is the minimum chapter to cover in the exam?
+5
+What is the maximum chapter to cover in the exam?
+4
+Sorry, the maximum chapter cannot be smaller than the minimum chapter.
+Please re-enter filter!
+How many questions should the exam have?
+10
+What is the minimum chapter to cover in the exam?
+5
+What is the maximum chapter to cover in the exam?
+0
+Sorry, maximum chapter cannot by 0 or below.
+Please re-enter filter!
+How many questions should the exam have?
+10
+What is the minimum chapter to cover in the exam?
+5
+What is the maximum chapter to cover in the exam?
+5
+Sorry, there aren't enough questions from those chapters.
+Please re-enter filter!
+How many questions should the exam have?
+10
+What is the minimum chapter to cover in the exam?
+1
+What is the maximum chapter to cover in the exam?
+1
+Sorry, there aren't enough questions from those chapters.
+Please re-enter filter!
+How many questions should the exam have?
+10
+What is the minimum chapter to cover in the exam?
+40
+What is the maximum chapter to cover in the exam?
+50
+Sorry, there aren't enough questions from those chapters.
+Please re-enter filter!
+How many questions should the exam have?
+10
+What is the minimum chapter to cover in the exam?
+1
+What is the maximum chapter to cover in the exam?
+10
