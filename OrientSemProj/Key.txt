@@ -1,0 +1,51 @@
+1. The correct answer is: c
+2. The correct answer is: b
+3. The correct answer is: b
+4. The correct answer is: d
+5. The correct answer is: virtual
+6. The correct answer is: base class
+7. The correct answer is: encapsulation
+8. The correct answer is: void despacify(char *str)
+{
+    // For each character (stopping at the null terminator)
+    for (int i = 0; str[i] != '\0'; i++) {
+        // Replace the character if it is a space
+        if (str[i] == ' ')
+            str[i] = '_';
+    }
+}
+9. The correct answer is: You would use a reference parameter if you need to change the argument and have the change reflected in the caller (for example, if your function has more than one output, so the return value isn't sufficient), or if you need to get the argument itself instead of a copy of it (for example, in a copy constructor). You would use a value parameter in most other cases: in particular, if you need to modify the parameter but not change the original argument, you should use a value parameter. Also, if your function needs to accept a literal argument, it must use a value parameter, because references parameters only accept variables, not literals.
+10. The correct answer is: // Class definition.
+class Address {
+public:
+    Address();
+    Address(const Address &original);
+
+    string get_name() const;
+    string get_street() const;
+    string get_street_number() const;
+    string get_city() const;
+    string get_state() const; // Can't return an array.
+    int get_zipcode() const;
+
+private:
+    string name;
+    string street;
+    string street_number; // "221B" isn't really a number :(
+    string city;
+    char state[2]; // or string
+    int zipcode;   // or string, to handle ZIP+4: 40506-1234
+};
+
+// Copy constructor implementation.
+Address::Address(const Address &original)
+{
+    name = original.name;
+    street = original.street;
+    street_number = original.street_number;
+    city = original.city;
+    // Copy the state abbreviation one letter at a time.
+    for (int i = 0; i < 1; i++)
+        state[i] = original.state[i];
+    zipcode = original.zipcode;
+}
