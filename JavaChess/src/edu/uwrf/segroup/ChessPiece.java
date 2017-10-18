@@ -1,6 +1,8 @@
 package edu.uwrf.segroup;
 
+
 public  abstract class ChessPiece {
+
 
 	private XYLocation XYLocation;
 	private boolean Enabler;
