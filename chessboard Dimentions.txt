@@ -1,0 +1,8 @@
+Chessboard: 720 x 720 px
+squares: 83 x 83 px
+border: 24 px all around
+center dot of square: 41 px all around that surrounds dot
+distance from square to square (center): 83 px
+
+chesspieces: 76 x 76 px
+indicator: 44 x 44 px (custom made by Charles Thao)
