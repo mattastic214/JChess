@@ -38,6 +38,7 @@ public class ChessGUI extends JFrame implements Runnable {
 	
 	private JTextArea chatDisplay = new JTextArea(10, 3);
 	private JTextArea chatEnter = new JTextArea(10, 3);
+
 	
 	private JPanel boardPanel = new JPanel();
 	private JPanel chatPanel = new JPanel(new GridLayout(2, 1, GAP, GAP));
@@ -45,6 +46,7 @@ public class ChessGUI extends JFrame implements Runnable {
 	/**
 	 * The null constructor for the GUI
 	 */
+
 	public ChessGUI()
 	{
 		super("Chess Lounge"); // this.setTitle("Chess Lounge");
@@ -53,14 +55,18 @@ public class ChessGUI extends JFrame implements Runnable {
 		setVisible(true); // this.setVisible(true);
 		setLayout(new GridLayout(1, 2));
 		setResizable(false); // this.setResizable(false);
+
 		addBoardPanel();
 		initializeGuiComponents();
+		
+		
 	}
 	
 	private void addBoardPanel() {
 		
 		boardPanel.add(boardIcon);
 		add(boardPanel);
+
 		
 	}
 	
@@ -71,6 +77,7 @@ public class ChessGUI extends JFrame implements Runnable {
 
 		add(chatPanel);
 	}
+
 	
 	@Override
 	public void run() {
