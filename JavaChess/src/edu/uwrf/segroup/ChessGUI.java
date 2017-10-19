@@ -19,7 +19,7 @@ import javax.swing.*;
  *
  */
 
-public class ChessGUI extends JFrame implements Runnable {
+public class ChessGUI extends JFrame {
 
 	//	Declare Variables --START--
 	private static final int HEIGHT = 900;
@@ -135,13 +135,15 @@ public class ChessGUI extends JFrame implements Runnable {
 		add(chatPanel);
 	}
 */
-	
+	/*
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
 		
+		System.out.println("test!");
+		
 	}
-	
+	*/
 	private class sendButton implements ActionListener
 	{
 

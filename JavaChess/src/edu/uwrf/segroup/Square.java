@@ -5,51 +5,19 @@ import java.awt.event.MouseListener;
 
 import javax.swing.*;
 
-public class Square extends Shape implements MouseListener {
+public class Square {
 
 	private JLabel Container;
 	
 	public Square()
 	{
-		super();
+		//super(); Extends Shape
 		Container = new JLabel();
 	}
 	
 	public JLabel getContainer()
 	{
 		return Container;
-	}
-
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-		
-		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
