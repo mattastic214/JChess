@@ -1,16 +1,22 @@
 package edu.uwrf.segroup;
 
+import javax.swing.*;
+
 public abstract class ChessPiece {
 
 	private XYLocation XYLocation;
 	private boolean Enabler;
-	private int Sider;
+	private boolean Activity;
+	private JLabel Container;
+	//private int Sider;
 	
 	public ChessPiece()
 	{
 		this.XYLocation = new XYLocation();
 		Enabler = false;
-		Sider = 0;
+		Activity = false;
+		Container = new JLabel();
+		//Sider = 0;
 	}
 	
 	public int getXLocation()
@@ -28,10 +34,20 @@ public abstract class ChessPiece {
 		return Enabler;
 	}
 	
-	public int getSider()
+	public boolean getActivity()
 	{
-		return Sider;
+		return Activity;
 	}
+	
+	public JLabel getContainer()
+	{
+		return Container;
+	}
+	
+	//public int getSider()
+	//{
+	//	return Sider;
+	//}
 	
 	public void setXLocation(int XLocation)
 	{
@@ -48,9 +64,19 @@ public abstract class ChessPiece {
 		this.Enabler = Enabler;
 	}
 	
-	public void setSider(int Sider)
+	public void setActivity(boolean Activity)
 	{
-		this.Sider = Sider;
+		this.Activity = Activity;
 	}
+	
+	public void setContainer(Icon Image)
+	{
+		this.Container.setIcon(Image);
+	}
+	
+	//public void setSider(int Sider)
+	//{
+	//	this.Sider = Sider;
+	//}
 	
 }
