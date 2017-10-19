@@ -17,4 +17,10 @@ public class Pawn extends ChessPiece {
 		super.setContainer(Image);
 	}
 
+	@Override
+	public void move() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
