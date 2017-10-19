@@ -1,6 +1,5 @@
 package edu.uwrf.segroup;
 
-
 import javax.swing.*;
 
 public class ChessGame

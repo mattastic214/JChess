@@ -22,8 +22,8 @@ import javax.swing.*;
 public class ChessGUI extends JFrame {
 
 	//	Declare Variables --START--
-	private static final int HEIGHT = 900;
-	private static final int WIDTH = 1500;
+	private static final int HEIGHT = 750;
+	private static final int WIDTH = 725;
 	private static final int GAP = 3;
 	//private static final int CHESSPIECESIZE = 76;
 	//private static final int CHESSPIECEHALFSIZE = CHESSPIECESIZE / 2;
