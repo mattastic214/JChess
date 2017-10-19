@@ -122,6 +122,8 @@ public class ChessGUI extends JFrame implements Runnable {
 		//boardPanel.add(boardIcon);
 		boardPanel.add(pawnIcon);
 		boardPanel.add(boardIcon);
+		boardIcon.setLocation(0, 10);
+		boardIcon.setSize(720, 720);
 		add(boardPanel);
 		
 	}
