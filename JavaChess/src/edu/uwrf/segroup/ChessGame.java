@@ -1,8 +1,10 @@
 package edu.uwrf.segroup;
 
+
 import javax.swing.*;
 
-public class ChessGame {
+public class ChessGame
+{
 	
 	private static final int CHESSPIECESIZE = 76;
 	private static final int CHESSPIECEHALFSIZE = CHESSPIECESIZE / 2;
@@ -15,6 +17,8 @@ public class ChessGame {
 	private Player Player1;
 	private Player Player2;
 	private JPanel ChessGameContainer;
+	private ChessListener PawnListener;
+	private Thread Run;
 	
 	public ChessGame()
 	{
@@ -26,6 +30,7 @@ public class ChessGame {
 		Player1 = new Player();
 		Player2 = new Player();
 		ChessGameContainer = new JPanel(null);
+		PawnListener = new ChessListener();
 		
 		for(int i = 0; i < WhiteChessPieces.length; i++)
 		{
@@ -36,6 +41,7 @@ public class ChessGame {
 				{
 					WhiteChessPieces[i].getContainer().setSize(CHESSPIECESIZE, CHESSPIECESIZE);
 					WhiteChessPieces[i].getContainer().setLocation((65 - CHESSPIECEHALFSIZE), (572 - CHESSPIECEHALFSIZE));
+					WhiteChessPieces[i].getContainer().addMouseListener(PawnListener);
 					ChessGameContainer.add(WhiteChessPieces[i].getContainer());
 				}
 			}
@@ -103,13 +109,38 @@ public class ChessGame {
 		
 		ChessBoard.getContainer().setSize(720, 720);
 		ChessBoard.getContainer().setLocation(0, 0);
+		ChessGameContainer.add(ChessBoard.getSquareContainer(0));
+		ChessGameContainer.add(ChessBoard.getSquareContainer(1));
 		ChessGameContainer.add(ChessBoard.getContainer());
 		
+		//Run = new Thread(this);
+		//Run.start();
 	}
 	
 	public JPanel getChessGameContainer()
 	{
 		return ChessGameContainer;
 	}
+	
+/*
+	@Override
+	public void run() {
+		
+		while(true)
+		{
+			if(ChessBoard.getSquareListener(0).getActivity() == true && PawnListener.getActivity() == true)
+			{
+				WhiteChessPieces[0].getContainer().setLocation(ChessBoard.getSquareContainer(0).getX(), ChessBoard.getSquareContainer(0).getY());
+				PawnListener.setActivity(false);
+			}
+			if(ChessBoard.getSquareListener(0).getActivity() == true)
+			{
+				ChessBoard.getSquareListener(0).setActivity(false);
+			}
+			System.out.println("test");
+		}
+		
+	}
+*/
 
 }

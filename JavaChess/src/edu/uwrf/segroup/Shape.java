@@ -2,8 +2,8 @@ package edu.uwrf.segroup;
 
 public abstract class Shape {
 
-	private XYLocation Center;
-	
+	//private XYLocation Center;
+	/*
 	public Shape()
 	{
 		Center = new XYLocation();
@@ -28,5 +28,5 @@ public abstract class Shape {
 	{
 		Center.setYLocation(Y);
 	}
-	
+	*/
 }
