@@ -1,5 +1,7 @@
 package edu.uwrf.segroup.model;
 
+import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
+
 /**
  * Square is a class that represents a square on a chess board. Square
  * contains information about its location on the board. Square also has 
@@ -46,25 +48,30 @@ public class Square {
 	/**
 	 * When a
 	 * @param entrant
+	 * @throws FriendlyCollisionException 
 	 */
-	public void setOccupier(ChessPiece entrant) {
+	public void setOccupier(ChessPiece entrant) throws FriendlyCollisionException {
 		
-		if(this.checkCollision())
-			;// ToDo: throw an event to reset the piece to its original position
-		else
-			this.occupier = entrant;
+		this.checkCollision(entrant);
+		
+		this.occupier = entrant;
 	}
 	
 	public void vacate() {
 		occupier = null;
 	}
 	
-	private boolean checkCollision() {
+	private void checkCollision(ChessPiece entrant) {
 		
-		if(occupier == null)
-			return false;
-		else 
-			return true;
+		if(this.getOccupier().getTeam() == entrant.getTeam())
+		{
+			try {
+				throw new FriendlyCollisionException();
+			} catch (FriendlyCollisionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+			
 	}
-	
 }
