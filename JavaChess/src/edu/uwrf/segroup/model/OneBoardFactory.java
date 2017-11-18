@@ -41,23 +41,47 @@ public class OneBoardFactory implements IBoardFactory{
 	@Override
 	public ArrayList<ChessPiece> createPieces(Side side) {
 		
+		String pawnColor;
+		String rookColor;
+		String bishopColor;
+		String knightColor;
+		String queenColor;
+		String kingColor;
+		
+		if(side == Side.WHITE) {
+			pawnColor 		= Settings.WHITE_PAWN_IMAGE;
+			rookColor 		= Settings.WHITE_ROOK_IMAGE;
+			bishopColor 	= Settings.WHITE_BISHOP_IMAGE;
+			knightColor 	= Settings.WHITE_KNIGHT_IMAGE;
+			queenColor 		= Settings.WHITE_QUEEN_IMAGE;
+			kingColor	 	= Settings.WHITE_KING_IMAGE;
+		}
+		else {
+			pawnColor 		= Settings.BLACK_PAWN_IMAGE;
+			rookColor 		= Settings.BLACK_ROOK_IMAGE;
+			bishopColor 	= Settings.BLACK_BISHOP_IMAGE;
+			knightColor 	= Settings.BLACK_KNIGHT_IMAGE;
+			queenColor 		= Settings.BLACK_QUEEN_IMAGE;
+			kingColor	 	= Settings.BLACK_KING_IMAGE;
+		}
+		
 		int generated = 0;
 		ArrayList<ChessPiece> pieces = new ArrayList<ChessPiece>();
 		
 		while(generated < 8) {
 			generated++;
-			Pawn pawn = new Pawn(side, null);
+			Pawn pawn = new Pawn(side, pawnColor);
 			pieces.add(pawn);
 		}
 		
-		Rook rookLeft = new Rook(side, null);
-		Knight knightLeft = new Knight(side, null);
-		Bishop bishopLeft = new Bishop(side, null);
-		Queen queen = new Queen(side, null);
-		King king = new King(side, null);
-		Bishop bishopRight = new Bishop(side, null);
-		Knight knightRight = new Knight(side, null);
-		Rook rookRight = new Rook(side, null);
+		Rook rookLeft = new Rook(side, rookColor);
+		Knight knightLeft = new Knight(side, knightColor);
+		Bishop bishopLeft = new Bishop(side, bishopColor);
+		Queen queen = new Queen(side, queenColor);
+		King king = new King(side, kingColor);
+		Bishop bishopRight = new Bishop(side, bishopColor);
+		Knight knightRight = new Knight(side, knightColor);
+		Rook rookRight = new Rook(side, rookColor);
 			
 		pieces.add(rookLeft);
 		pieces.add(knightLeft);
@@ -80,11 +104,7 @@ public class OneBoardFactory implements IBoardFactory{
 		for(int i = 0; i < 2; i++) {
 			for(int j = 0; j < 8; j++) {
 				if(IChess.hasNext())
-				{
-					
 					board[i][j].setOccupier(IChess.next());
-				}
-					
 			}
 		}
 		
@@ -93,11 +113,7 @@ public class OneBoardFactory implements IBoardFactory{
 		for(int i = 6; i < 8; i++) {
 			for(int j = 0; j < 8; j++) {
 				if(IChess.hasNext())
-				{
-					
 					board[i][j].setOccupier(IChess.next());
-				}
-					
 			}
 		}
 		

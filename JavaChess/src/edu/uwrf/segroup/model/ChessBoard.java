@@ -1,5 +1,6 @@
 package edu.uwrf.segroup.model;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 
 import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
@@ -29,6 +30,10 @@ public class ChessBoard {
 		this.whitePieces = boardFactory.createPieces(Side.WHITE);
 		this.blackPieces = boardFactory.createPieces(Side.BLACK);
 		boardFactory.populateSquares(squares, whitePieces, blackPieces);
+		
+	}
+	
+	public void update(Graphics g) {
 		
 	}
 }

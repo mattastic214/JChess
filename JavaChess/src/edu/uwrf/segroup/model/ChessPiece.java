@@ -9,7 +9,6 @@ import javax.imageio.ImageIO;
 public abstract class ChessPiece {
 	
 	protected Side team;
-	protected Square location;
 	protected Image image;
 	
 	public ChessPiece(Side setTeam, String imagePath) {
@@ -28,13 +27,6 @@ public abstract class ChessPiece {
 		return team;
 	}
 	
-	public Square getLocation() {
-		return location;
-	}
-	
-	public void setSquare(Square dest) {
-		location = dest;
-	}
 	
 	/*
 	public void move(Square dest) {
