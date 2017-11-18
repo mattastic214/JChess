@@ -1,14 +1,27 @@
 package edu.uwrf.segroup.model;
 
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public abstract class ChessPiece {
 	
 	protected Side team;
-	private Square location;
+	protected Square location;
+	protected Image image;
 	
-	public ChessPiece(Side setTeam, Square start) {
+	public ChessPiece(Side setTeam, String imagePath) {
+		
+		try {
+	    	image = ImageIO.read(new File(imagePath));
+	    } catch (IOException ioe) {
+	    	System.out.println("Unable to load image file.");
+	    }
+		
 		team = setTeam;
-		location = start;
+		
 	}
 	
 	public Side getTeam() {
@@ -19,6 +32,10 @@ public abstract class ChessPiece {
 		return location;
 	}
 	
+	public void setSquare(Square dest) {
+		location = dest;
+	}
+	
 	/*
 	public void move(Square dest) {
 		
@@ -26,7 +43,7 @@ public abstract class ChessPiece {
 			enforceRules(dest);
 	}*/
 	
-	protected abstract void moveRules(Square dest);
+	protected abstract void moveRules(Square origin, Square dest);
 	
 	/**
 	// Needs to check Side of piece in Square
