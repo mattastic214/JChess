@@ -2,6 +2,8 @@ package edu.uwrf.segroup.model;
 
 import java.util.ArrayList;
 
+import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
+
 /**
  * IBoardFactory is a Factory interface for creating
  * ChessBoard objects.
@@ -10,7 +12,7 @@ import java.util.ArrayList;
  */
 public interface IBoardFactory {
 
-	public Square[][] createSquares();
 	public ArrayList<ChessPiece> createPieces(Side side);
-	public void populateSquares(Square[][] set);
+	public Square[][] createSquares();
+	public void populateSquares(Square[][] board, ArrayList<ChessPiece> white, ArrayList<ChessPiece> black) throws FriendlyCollisionException;
 }

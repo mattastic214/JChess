@@ -2,9 +2,11 @@ package edu.uwrf.segroup.model;
 
 import java.util.ArrayList;
 
+import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
+
 /**
  * ChessBoard is a class that initiates an 
- * instance of a chess board. 
+ * instance of a chess board. It is most like Model in Zombie
  * <p>
  * The class is 
  * responsible for populating the chess board
@@ -20,11 +22,13 @@ public class ChessBoard {
 	private ArrayList<ChessPiece> whitePieces;
 	private ArrayList<ChessPiece> blackPieces;
 	
-	public ChessBoard(IBoardFactory boardFactory) {
+	public ChessBoard(IBoardFactory boardFactory) throws FriendlyCollisionException {
+		System.out.println("Model()");
 		
 		this.squares = boardFactory.createSquares();
 		this.whitePieces = boardFactory.createPieces(Side.WHITE);
 		this.blackPieces = boardFactory.createPieces(Side.BLACK);
-		boardFactory.populateSquares(this.squares);
+		boardFactory.populateSquares(squares, whitePieces, blackPieces);
+		
 	}
 }

@@ -62,16 +62,17 @@ public class Square {
 	}
 	
 	private void checkCollision(ChessPiece entrant) {
-		
-		if(this.getOccupier().getTeam() == entrant.getTeam())
-		{
+	
 			try {
-				throw new FriendlyCollisionException();
+				if(this.getOccupier().getTeam() == entrant.getTeam())
+					throw new FriendlyCollisionException();
+				else if(this.getOccupier().getTeam() != null)
+					this.vacate();
 			} catch (FriendlyCollisionException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
+	
 			
 	}
 }
