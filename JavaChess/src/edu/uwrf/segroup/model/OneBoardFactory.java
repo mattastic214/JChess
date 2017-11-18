@@ -9,7 +9,7 @@ import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
  * interface.
  * <p>
  * The factory creates {@link Squares}, creates {@link ChessPieces}, and populates the {@link Squares} of a
- * {@link ChessBoard} object.
+ * {@link Model} object.
  * @author matta
  *
  */
