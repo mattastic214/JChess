@@ -75,4 +75,8 @@ public class Square {
 	
 			
 	}
+	
+	/**
+	 * Todo: Chess Square sends piece to another square.
+	 */
 }

@@ -17,4 +17,6 @@ public final class Settings {
 	public static final String BLACK_KNIGHT_IMAGE	= "resources/Black Knight.png";
 	public static final String BLACK_QUEEN_IMAGE	= "resources/Black Queen.png";
 	public static final String BLACK_ROOK_IMAGE		= "resources/Black Rook.png";
+	
+	public static final String CHESS_BOARD_IMAGE	= "resources/chessboard.png";
 }

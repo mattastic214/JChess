@@ -27,8 +27,8 @@ public class Model {
 		System.out.println("Model()");
 		
 		this.chessboard = boardFactory.createSquares();
-		this.whitePieces = boardFactory.createPieces(Side.WHITE);
-		this.blackPieces = boardFactory.createPieces(Side.BLACK);
+		this.whitePieces = boardFactory.createWhitePieces();
+		this.blackPieces = boardFactory.createBlackPieces();
 		boardFactory.populateSquares(chessboard, whitePieces, blackPieces);
 		
 	}

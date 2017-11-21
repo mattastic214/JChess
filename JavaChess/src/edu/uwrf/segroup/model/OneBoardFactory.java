@@ -39,49 +39,59 @@ public class OneBoardFactory implements IBoardFactory{
 	 * Implementation of {@link IBoardFactory#createPieces(Side)}
 	 */
 	@Override
-	public ArrayList<ChessPiece> createPieces(Side side) {
-		
-		String pawnColor;
-		String rookColor;
-		String bishopColor;
-		String knightColor;
-		String queenColor;
-		String kingColor;
-		
-		if(side == Side.WHITE) {
-			pawnColor 		= Settings.WHITE_PAWN_IMAGE;
-			rookColor 		= Settings.WHITE_ROOK_IMAGE;
-			bishopColor 	= Settings.WHITE_BISHOP_IMAGE;
-			knightColor 	= Settings.WHITE_KNIGHT_IMAGE;
-			queenColor 		= Settings.WHITE_QUEEN_IMAGE;
-			kingColor	 	= Settings.WHITE_KING_IMAGE;
-		}
-		else {
-			pawnColor 		= Settings.BLACK_PAWN_IMAGE;
-			rookColor 		= Settings.BLACK_ROOK_IMAGE;
-			bishopColor 	= Settings.BLACK_BISHOP_IMAGE;
-			knightColor 	= Settings.BLACK_KNIGHT_IMAGE;
-			queenColor 		= Settings.BLACK_QUEEN_IMAGE;
-			kingColor	 	= Settings.BLACK_KING_IMAGE;
-		}
+	public ArrayList<ChessPiece> createWhitePieces() {
 		
 		int generated = 0;
 		ArrayList<ChessPiece> pieces = new ArrayList<ChessPiece>();
 		
 		while(generated < 8) {
 			generated++;
-			Pawn pawn = new Pawn(side, pawnColor);
+			Pawn pawn = new Pawn(Side.WHITE, Settings.WHITE_PAWN_IMAGE);
 			pieces.add(pawn);
 		}
 		
-		Rook rookLeft = new Rook(side, rookColor);
-		Knight knightLeft = new Knight(side, knightColor);
-		Bishop bishopLeft = new Bishop(side, bishopColor);
-		Queen queen = new Queen(side, queenColor);
-		King king = new King(side, kingColor);
-		Bishop bishopRight = new Bishop(side, bishopColor);
-		Knight knightRight = new Knight(side, knightColor);
-		Rook rookRight = new Rook(side, rookColor);
+		Rook rookLeft = new Rook(Side.WHITE, Settings.WHITE_ROOK_IMAGE);
+		Knight knightLeft = new Knight(Side.WHITE, Settings.WHITE_KNIGHT_IMAGE);
+		Bishop bishopLeft = new Bishop(Side.WHITE, Settings.WHITE_BISHOP_IMAGE);
+		Queen queen = new Queen(Side.WHITE, Settings.WHITE_QUEEN_IMAGE);
+		King king = new King(Side.WHITE, Settings.WHITE_KING_IMAGE);
+		Bishop bishopRight = new Bishop(Side.WHITE, Settings.WHITE_BISHOP_IMAGE);
+		Knight knightRight = new Knight(Side.WHITE, Settings.BLACK_KNIGHT_IMAGE);
+		Rook rookRight = new Rook(Side.WHITE, Settings.WHITE_ROOK_IMAGE);
+			
+		pieces.add(rookLeft);
+		pieces.add(knightLeft);
+		pieces.add(bishopLeft);
+		pieces.add(queen);
+		pieces.add(king);
+		pieces.add(bishopRight);
+		pieces.add(knightRight);
+		pieces.add(rookRight);
+		
+		
+		return pieces;
+	}
+	
+	@Override
+	public ArrayList<ChessPiece> createBlackPieces() {
+		
+		int generated = 0;
+		ArrayList<ChessPiece> pieces = new ArrayList<ChessPiece>();
+		
+		while(generated < 8) {
+			generated++;
+			Pawn pawn = new Pawn(Side.BLACK, Settings.BLACK_PAWN_IMAGE);
+			pieces.add(pawn);
+		}
+		
+		Rook rookLeft = new Rook(Side.BLACK, Settings.BLACK_ROOK_IMAGE);
+		Knight knightLeft = new Knight(Side.BLACK, Settings.BLACK_KNIGHT_IMAGE);
+		Bishop bishopLeft = new Bishop(Side.BLACK, Settings.BLACK_BISHOP_IMAGE);
+		Queen queen = new Queen(Side.BLACK, Settings.BLACK_QUEEN_IMAGE);
+		King king = new King(Side.BLACK, Settings.BLACK_KING_IMAGE);
+		Bishop bishopRight = new Bishop(Side.BLACK, Settings.BLACK_BISHOP_IMAGE);
+		Knight knightRight = new Knight(Side.BLACK, Settings.BLACK_KNIGHT_IMAGE);
+		Rook rookRight = new Rook(Side.BLACK, Settings.BLACK_ROOK_IMAGE);
 			
 		pieces.add(rookLeft);
 		pieces.add(knightLeft);
