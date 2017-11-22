@@ -1,5 +1,7 @@
 package edu.uwrf.segroup.model;
 
+import java.awt.Graphics;
+
 import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
 
 /**
@@ -16,6 +18,8 @@ public class Square {
 
 	private int rowID;
 	private int colID;
+	private int pixelx;
+	private int pixely;
 	private ChessPiece occupier;
 	
 	/**
@@ -45,6 +49,11 @@ public class Square {
 		return occupier;
 	}
 	
+	public void setPixels(int x, int y) {
+		pixelx = x;
+		pixely = y;
+	}
+	
 	/**
 	 * When a
 	 * @param entrant
@@ -57,15 +66,17 @@ public class Square {
 		this.occupier = entrant;
 	}
 	
-	public void vacate() {
+	private void vacate() {
 		occupier = null;
 	}
 	
 	private void checkCollision(ChessPiece entrant) {
 	
 			try {
+				// Pieces are on the same team
 				if(this.getOccupier().getTeam() == entrant.getTeam())
 					throw new FriendlyCollisionException();
+				// Pieces are on opposite teams
 				else if(this.getOccupier().getTeam() != null)
 					this.vacate();
 			} catch (FriendlyCollisionException e) {
@@ -79,4 +90,12 @@ public class Square {
 	/**
 	 * Todo: Chess Square sends piece to another square.
 	 */
+	public void send(ChessPiece mover, Square dest) throws FriendlyCollisionException{
+		dest.setOccupier(mover);
+		this.vacate();
+	}
+	
+	public void update(Graphics g) {
+		g.drawImage(occupier.getImage(), pixelx, pixely, Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
+	}
 }

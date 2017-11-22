@@ -8,8 +8,8 @@ import javax.imageio.ImageIO;
 
 public abstract class ChessPiece {
 	
-	protected Side team;
-	protected Image image;
+	private Side team;
+	private Image image;
 	
 	public ChessPiece(Side setTeam, String imagePath) {
 		
@@ -25,6 +25,10 @@ public abstract class ChessPiece {
 	
 	public Side getTeam() {
 		return team;
+	}
+	
+	public Image getImage() {
+		return image;
 	}
 	
 	
