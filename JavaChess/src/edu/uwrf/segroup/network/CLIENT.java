@@ -6,7 +6,7 @@ public class CLIENT {
 
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		
-			Socket s = new Socket("10.20.29.72",8888);//IP of machine want coms with. Same port as server.
+			Socket s = new Socket("10.22.8.26",80);//IP of machine want coms with. Same port as server.
 			
 			//Input/Output Stream for messages
 			DataInputStream din = new DataInputStream(s.getInputStream());
