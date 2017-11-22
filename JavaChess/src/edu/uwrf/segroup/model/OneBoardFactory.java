@@ -15,8 +15,7 @@ import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
  */
 public class OneBoardFactory implements IBoardFactory{
 
-	private final int NUM_ROWS = 8;
-	private final int NUM_COLS = 8;
+	
 	
 	/**
 	 * Implementation of {@link IBoardFactory#createSquares()}
@@ -24,10 +23,10 @@ public class OneBoardFactory implements IBoardFactory{
 	@Override
 	public Square[][] createSquares() {
 		
-		Square[][] chessBoard = new Square[NUM_ROWS][NUM_COLS];
+		Square[][] chessBoard = new Square[Settings.NUM_ROWS][Settings.NUM_COLS];
 		
-		for(int i = 0; i < NUM_ROWS; i++) {
-			for(int j = 0; j < NUM_COLS; i++) {
+		for(int i = 0; i < Settings.NUM_ROWS; i++) {
+			for(int j = 0; j < Settings.NUM_COLS; i++) {
 				chessBoard[i][j] = new Square(i, j);	// Squares are identified by their (rank - 1) on board.
 			}
 		}

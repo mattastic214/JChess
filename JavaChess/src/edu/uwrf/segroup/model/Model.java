@@ -35,6 +35,14 @@ public class Model {
 	
 	public void update(Graphics g) {
 		
+		for(int row = 0; row < Settings.NUM_ROWS; row++) {
+			for(int col = 0; col < Settings.NUM_COLS; col++) {
+				chessboard[row][col].update(g);
+			}
+		}
+	}
+	
+	public void setPieces() {
 		
 	}
 }
