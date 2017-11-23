@@ -74,11 +74,14 @@ public class Square {
 	
 			try {
 				// Pieces are on the same team
-				if(this.getOccupier().getTeam() == entrant.getTeam())
-					throw new FriendlyCollisionException();
-				// Pieces are on opposite teams
-				else if(this.getOccupier().getTeam() != null)
-					this.vacate();
+				if(this.getOccupier() != null) {
+					if(this.getOccupier().getTeam() == entrant.getTeam())
+						throw new FriendlyCollisionException();
+					// Pieces are on opposite teams
+					else if(this.getOccupier().getTeam() != null)
+						this.vacate();
+				}
+				
 			} catch (FriendlyCollisionException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -97,6 +100,11 @@ public class Square {
 	}
 	
 	public void update(Graphics g) {
-		g.drawImage(occupier.getImage(), pixelx, pixely, Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
+		//g.drawImage(occupier.getImage(), pixelx, pixely, Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
+		if(getOccupier() != null)
+			g.drawImage(occupier.getImage(), pixelx, pixely, Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
+		else {
+			g.drawImage(null, pixelx, pixely, null);
+		}
 	}
 }

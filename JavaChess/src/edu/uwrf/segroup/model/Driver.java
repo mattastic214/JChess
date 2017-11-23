@@ -10,7 +10,7 @@ public class Driver {
 		View view				= new View();
 		Controller controller 	= new Controller();
 		
-		controller.addMode(model);
+		controller.addModel(model);
 		controller.addView(view);
 		
 		view.addModel(model);
