@@ -34,7 +34,7 @@ public class OneBoardFactory implements IBoardFactory{
 		Square[][] chessBoard = new Square[Settings.NUM_ROWS][Settings.NUM_COLS];
 		
 		for(int i = 0; i < Settings.NUM_ROWS; i++) {
-			for(int j = 0; j < Settings.NUM_COLS; i++) {
+			for(int j = 0; j < Settings.NUM_COLS; j++) {
 				chessBoard[i][j] = new Square(i, j);	// Squares are identified by their (rank - 1) on board.
 			}
 		}

@@ -1,23 +1,25 @@
 package edu.uwrf.segroup.model;
 
 import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 public abstract class ChessPiece {
 	
-	private Side team;
-	private Image image;
+	protected Side team;
+	protected Image image;
 	
 	public ChessPiece(Side setTeam, String imagePath) {
 		
 		try {
-	    	image = ImageIO.read(new File(imagePath));
-	    } catch (IOException ioe) {
-	    	System.out.println("Unable to load image file.");
-	    }
+			image = ImageIO.read(new File(imagePath));
+		} catch (IOException ioe) {
+			System.out.println("Unable to load image file");
+		}
 		
 		team = setTeam;
 		
