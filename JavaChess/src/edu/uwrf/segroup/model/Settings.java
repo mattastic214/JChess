@@ -17,7 +17,7 @@ public final class Settings {
 	public static final int NUM_COLS = 8;
 	public static final int SQUARE_DIM = 83;
 	
-	public static final String WHITE_PAWN_IMAGE		= "/resource/Pawn.png";
+	public static final String WHITE_PAWN_IMAGE		= "/resources/Pawn.png";
 	public static final String WHITE_BISHOP_IMAGE	= "/resources/Black Bishop.png";
 	public static final String WHITE_KING_IMAGE		= "/resources/White King.png";
 	public static final String WHITE_KNIGHT_IMAGE	= "/resources/White Knight.png";
