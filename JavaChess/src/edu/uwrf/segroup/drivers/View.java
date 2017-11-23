@@ -1,4 +1,4 @@
-package edu.uwrf.segroup.model;
+package edu.uwrf.segroup.drivers;
 
 import java.awt.Container;
 import java.awt.Dimension;
@@ -12,6 +12,10 @@ import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import edu.uwrf.segroup.model.Model;
+import edu.uwrf.segroup.model.Settings;
+import edu.uwrf.segroup.model.Square;
 
 
 public class View implements ActionListener {

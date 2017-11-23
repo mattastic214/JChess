@@ -1,5 +1,6 @@
-package edu.uwrf.segroup.model;
+package edu.uwrf.segroup.drivers;
 
+import edu.uwrf.segroup.model.*;
 import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
 
 public class Driver {

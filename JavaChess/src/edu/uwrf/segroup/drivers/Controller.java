@@ -1,4 +1,4 @@
-package edu.uwrf.segroup.model;
+package edu.uwrf.segroup.drivers;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ItemListener;
@@ -8,6 +8,8 @@ import java.awt.event.MouseListener;
 import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
 import javax.swing.event.ChangeListener;
+
+import edu.uwrf.segroup.model.Model;
 
 public class Controller implements MouseListener, ButtonModel {
 	
