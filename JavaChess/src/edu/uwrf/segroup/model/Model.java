@@ -1,6 +1,7 @@
 package edu.uwrf.segroup.model;
 
 import java.awt.Graphics;
+import java.awt.Image;
 import java.util.ArrayList;
 
 import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
@@ -22,6 +23,7 @@ public class Model {
 	private Square[][] chessboard;
 	private ArrayList<ChessPiece> whitePieces;
 	private ArrayList<ChessPiece> blackPieces;
+	private Image boardImage;
 	
 	public Model(IBoardFactory boardFactory) throws FriendlyCollisionException {
 		System.out.println("Model()");
@@ -30,7 +32,7 @@ public class Model {
 		this.whitePieces = boardFactory.createWhitePieces();
 		this.blackPieces = boardFactory.createBlackPieces();
 		boardFactory.populateSquares(chessboard, whitePieces, blackPieces);
-		
+		this.boardImage = boardFactory.setImage();
 	}
 	
 	public void update(Graphics g) {

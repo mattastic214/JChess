@@ -26,9 +26,9 @@ public class View implements ActionListener {
 	View() {
 		System.out.println("View()");	
 	
-		frame = new JFrame("MVC...BRAINS!!!");
+		frame = new JFrame("Chess");
 		
-		// Create a panel to contain sprites
+		
 		panel = new MyPanel();
 		frame.add(panel);		
 

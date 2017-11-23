@@ -91,6 +91,7 @@ public class Square {
 	 * Todo: Chess Square sends piece to another square.
 	 */
 	public void send(ChessPiece mover, Square dest) throws FriendlyCollisionException{
+		mover.moveRules(this, dest);
 		dest.setOccupier(mover);
 		this.vacate();
 	}

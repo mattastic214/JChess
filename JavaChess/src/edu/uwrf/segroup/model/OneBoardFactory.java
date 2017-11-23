@@ -1,6 +1,14 @@
 package edu.uwrf.segroup.model;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.ImageObserver;
+import java.awt.image.ImageProducer;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.ListIterator;
+
+import javax.imageio.ImageIO;
 
 import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
 
@@ -125,6 +133,20 @@ public class OneBoardFactory implements IBoardFactory{
 					board[i][j].setOccupier(IChess.next());
 			}
 		}
+		
+	}
+
+	@Override
+	public Image setImage() {
+		
+		Image image = null;
+		try {
+			image = ImageIO.read(new File(Settings.CHESS_BOARD_IMAGE));
+		} catch (IOException e) {
+			System.out.println("Unable to load image file.");
+		}
+		
+		return image;
 		
 	}
 
