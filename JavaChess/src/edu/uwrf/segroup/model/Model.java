@@ -4,6 +4,8 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
+
 import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
 
 /**
@@ -33,6 +35,11 @@ public class Model {
 		this.blackPieces = boardFactory.createBlackPieces();
 		boardFactory.populateSquares(chessboard, whitePieces, blackPieces);
 		//this.boardImage = boardFactory.setImage();
+	}
+	
+	public Square[][] getSquares() {
+		
+		return chessboard;
 	}
 	
 	public void update(Graphics g) {

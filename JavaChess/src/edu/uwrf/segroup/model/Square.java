@@ -1,6 +1,13 @@
 package edu.uwrf.segroup.model;
 
 import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Point;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 
 import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
 
@@ -49,9 +56,15 @@ public class Square {
 		return occupier;
 	}
 	
-	public void setPixels(int x, int y) {
-		pixelx = x;
-		pixely = y;
+	public ImageIcon getOccupierImage() {
+		if(occupier != null)
+			return occupier.getImage();
+		return null;
+	}
+	
+	public void setPixels(Point p) {
+		pixelx = p.x;
+		pixely = p.y;
 	}
 	
 	/**
@@ -100,11 +113,14 @@ public class Square {
 	}
 	
 	public void update(Graphics g) {
+		
+		/*
 		//g.drawImage(occupier.getImage(), pixelx, pixely, Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
 		if(getOccupier() != null)
-			g.drawImage(occupier.getImage(), pixelx, pixely, Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
+			g.drawImage((Image)occupier.getImage(), pixelx, pixely, Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
 		else {
 			g.drawImage(null, pixelx, pixely, null);
-		}
+		}*/
 	}
+	
 }

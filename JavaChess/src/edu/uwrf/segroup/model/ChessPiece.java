@@ -13,16 +13,13 @@ import javax.swing.ImageIcon;
 public abstract class ChessPiece {
 	
 	protected Side team;
-	protected Image image;
+	protected ImageIcon image;
 	
 	public ChessPiece(Side setTeam, String imagePath) {
 		
-		try {
-			URL iStream = getClass().getResource(imagePath);
-			image = ImageIO.read(iStream);
-		} catch (IOException ioe) {
-			System.out.println("Unable to load image file");
-		}
+		
+		URL iStream = getClass().getResource(imagePath);
+		image =  new ImageIcon(iStream);
 		
 		team = setTeam;
 		
@@ -32,7 +29,8 @@ public abstract class ChessPiece {
 		return team;
 	}
 	
-	public Image getImage() {
+	public ImageIcon getImage() {
+		
 		return image;
 	}
 	

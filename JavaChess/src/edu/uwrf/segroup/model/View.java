@@ -1,6 +1,5 @@
 package edu.uwrf.segroup.model;
 
-import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -9,6 +8,7 @@ import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -32,13 +32,13 @@ public class View implements ActionListener {
 	
 	//private MyPanel panel;
 	private JPanel panel;
-	View() {
+	View(Model m) {
 		System.out.println("View()");	
 	
 		frame = new JFrame("Chess");
+		Square[][] set = m.getSquares();
 		
-		
-		panel = new JPanel();
+		panel = new MyPanel();
 		panel.setLayout(new GridLayout(8, 8));
 		//chessGridLayout  = new ChessGridLayout();
 		
@@ -51,11 +51,13 @@ public class View implements ActionListener {
 				
 				if((row + col) % 2 != 0)
 					tileButtons[row][col].setBackground(Settings.COLOR_BLACK);
-				
+				tileButtons[row][col].setIcon((Icon) set[row][col].getOccupierImage());
 				panel.add(tileButtons[row][col]);
 				tileButtons[row][col].addActionListener(this);
+				
 			}
 		}
+		
 		//frame.add(new ChessGridLayout());
 
 

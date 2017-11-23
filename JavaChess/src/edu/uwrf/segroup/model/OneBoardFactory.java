@@ -49,11 +49,7 @@ public class OneBoardFactory implements IBoardFactory{
 		int generated = 0;
 		ArrayList<ChessPiece> pieces = new ArrayList<ChessPiece>();
 		
-		while(generated < 8) {
-			generated++;
-			Pawn pawn = new Pawn(Side.WHITE, Settings.WHITE_PAWN_IMAGE);
-			pieces.add(pawn);
-		}
+		
 		
 		Rook rookLeft = new Rook(Side.WHITE, Settings.WHITE_ROOK_IMAGE);
 		Knight knightLeft = new Knight(Side.WHITE, Settings.WHITE_KNIGHT_IMAGE);
@@ -61,7 +57,7 @@ public class OneBoardFactory implements IBoardFactory{
 		Queen queen = new Queen(Side.WHITE, Settings.WHITE_QUEEN_IMAGE);
 		King king = new King(Side.WHITE, Settings.WHITE_KING_IMAGE);
 		Bishop bishopRight = new Bishop(Side.WHITE, Settings.WHITE_BISHOP_IMAGE);
-		Knight knightRight = new Knight(Side.WHITE, Settings.BLACK_KNIGHT_IMAGE);
+		Knight knightRight = new Knight(Side.WHITE, Settings.WHITE_KNIGHT_IMAGE);
 		Rook rookRight = new Rook(Side.WHITE, Settings.WHITE_ROOK_IMAGE);
 			
 		pieces.add(rookLeft);
@@ -72,6 +68,12 @@ public class OneBoardFactory implements IBoardFactory{
 		pieces.add(bishopRight);
 		pieces.add(knightRight);
 		pieces.add(rookRight);
+		
+		while(generated < 8) {
+			generated++;
+			Pawn pawn = new Pawn(Side.WHITE, Settings.WHITE_PAWN_IMAGE);
+			pieces.add(pawn);
+		}
 		
 		
 		return pieces;
