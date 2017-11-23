@@ -1,8 +1,6 @@
 package edu.uwrf.segroup.model;
-import java.awt.Graphics;
+
 import java.awt.Image;
-import java.awt.image.ImageObserver;
-import java.awt.image.ImageProducer;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -135,7 +133,7 @@ public class OneBoardFactory implements IBoardFactory{
 		}
 		
 	}
-
+/*
 	@Override
 	public Image setImage() {
 		
@@ -149,7 +147,7 @@ public class OneBoardFactory implements IBoardFactory{
 		return image;
 		
 	}
-
+*/
 	
 
 	

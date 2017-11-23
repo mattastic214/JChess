@@ -1,6 +1,5 @@
 package edu.uwrf.segroup.model;
 
-import java.awt.Image;
 import java.util.ArrayList;
 
 import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
@@ -19,5 +18,5 @@ public interface IBoardFactory {
 	public Square[][] createSquares();
 	public void populateSquares(Square[][] board, ArrayList<ChessPiece> white, ArrayList<ChessPiece> black) 
 			throws FriendlyCollisionException;
-	public Image setImage();
+	//public Image setImage();
 }
