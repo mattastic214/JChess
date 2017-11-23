@@ -23,6 +23,7 @@ public class View implements ActionListener {
 	private JFrame frame;
 	private Model model;
 	
+	
 	@SuppressWarnings("serial")
 	private class MyPanel extends JPanel {
 	    
@@ -81,6 +82,7 @@ public class View implements ActionListener {
 	public void addModel(Model model){
 		System.out.println("View      : adding model");
 		this.model = model;
+		
 	}
 	
 	@Override
