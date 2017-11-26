@@ -8,7 +8,7 @@ public class Driver {
 	public static void main(String[] args) throws FriendlyCollisionException {
 		
 		Model model				= new Model(new OneBoardFactory());
-		View view				= new View(model);
+		View view				= new View();
 		Controller controller 	= new Controller();
 		
 		controller.addModel(model);
