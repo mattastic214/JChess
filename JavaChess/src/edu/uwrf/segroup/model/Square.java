@@ -25,9 +25,8 @@ public class Square
 {
 	private int rowID;
 	private int colID;
-	private int pixelx;
-	private int pixely;
 	private ChessPiece occupier;
+	private JButton button;
 	
 	/**
 	 * Initializes an instance of a Square object
@@ -41,6 +40,7 @@ public class Square
 		rowID = row;
 		colID = col;
 		occupier = null;
+		button = new JButton();
 	}
 	
 	public int getRowID()
@@ -61,15 +61,23 @@ public class Square
 	public Image getOccupierImage()
 	{
 		if(occupier != null)
+		{
+			//System.out.println("Test!");
 			return occupier.getImage();
-		return null;
+		}
+		else
+			return null;
 	}
 	
-	public void setPixels(Point p)
+	/*
+	public void setPixels(int x, int y)
 	{
-		pixelx = p.x;
-		pixely = p.y;
+		if(occupier != null)
+		{
+			occupier.setXYPixels(x, y);
+		}
 	}
+	*/
 	
 	/**
 	 * When a
@@ -78,8 +86,45 @@ public class Square
 	 */
 	public void setOccupier(ChessPiece entrant) throws FriendlyCollisionException
 	{
-		this.checkCollision(entrant);
+		//this.checkCollision(entrant);
 		this.occupier = entrant;
+	}
+	
+	
+	public void setImageIcon()
+	{
+		if(occupier != null && occupier.getImage() != null)
+		{
+			ImageIcon temp = new ImageIcon(occupier.getImage());
+			button.setIcon(temp);
+		}
+	}
+	
+	/*
+	public void setImageIcon(Image image)
+	{
+		if(occupier != null && image != null)
+		{
+			ImageIcon temp = new ImageIcon(image);
+			button.setIcon(temp);
+		}
+	}
+	
+	
+	public Icon getIcon()
+	{
+		if(occupier != null && occupier.getImage() != null)
+		{
+			return button.getIcon();
+		}
+		else
+			return null;
+	}
+	*/
+	
+	public JButton getButton()
+	{
+		return button;
 	}
 	
 	private void vacate()
@@ -123,9 +168,9 @@ public class Square
 	
 	public void update(Graphics g)
 	{
+		setImageIcon();
 		//g.drawImage(image, x, y, size, size, null);
-		
-		//g.drawImage(occupier.getImage(), pixelx, pixely, Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
+		//g.drawImage(occupier.getImage(), occupier.getXPixel(), occupier.getYPixel(), Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
 		/*
 		if(getOccupier() != null)
 			g.drawImage((Image)occupier.getImage(), pixelx, pixely, Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);

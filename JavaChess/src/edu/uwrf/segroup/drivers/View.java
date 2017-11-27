@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import java.util.Set;
 
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -26,7 +27,7 @@ public class View implements ActionListener
 	private Model model;
 	private JPanel panel;
 	private Square[][] set;
-	private JButton[][] tileButtons;
+	//private JButton[][] tileButtons;
 	
 	@SuppressWarnings("serial")
 	private class MyPanel extends JPanel
@@ -53,6 +54,7 @@ public class View implements ActionListener
 		
 		frame.setVisible(true);
 
+		//temp = new ImageIcon();
 	} 
 	
 	public void addController(Controller controller)
@@ -62,7 +64,8 @@ public class View implements ActionListener
 		{
 			for(int col = 0; col < Settings.NUM_COLS; col++)
 			{
-				tileButtons[row][col].addActionListener(controller);
+				//tileButtons[row][col].addActionListener(controller);
+				model.getaSquare(row, col).getButton().addActionListener(controller);
 			}
 		}
 	}
@@ -73,18 +76,26 @@ public class View implements ActionListener
 		this.model = model;
 		set = model.getSquares();
 		
-		tileButtons = new JButton[Settings.NUM_ROWS][Settings.NUM_COLS];
+		//tileButtons = new JButton[Settings.NUM_ROWS][Settings.NUM_COLS];
 		
 		frame.add(panel);
 		for(int row = 0; row < Settings.NUM_ROWS; row++)
 		{
 			for(int col = 0; col < Settings.NUM_COLS; col++)
 			{
-				tileButtons[row][col] = new JButton();
+				//tileButtons[row][col] = new JButton();
 				if((row + col) % 2 != 0)
-					tileButtons[row][col].setBackground(Settings.COLOR_BLACK);
-				tileButtons[row][col].setIcon((Icon) set[row][col].getOccupierImage());
-				panel.add(tileButtons[row][col]);
+				{
+					//tileButtons[row][col].setBackground(Settings.COLOR_BLACK);
+					this.model.getaSquare(row, col).getButton().setBackground(Settings.COLOR_BLACK);
+				}
+				if(set[row][col].getOccupierImage() != null)
+				{
+					ImageIcon temp = new ImageIcon(set[row][col].getOccupierImage());
+					//tileButtons[row][col].setIcon(temp);
+					this.model.getaSquare(row, col).getButton().setIcon(temp);
+				}
+				panel.add(this.model.getaSquare(row, col).getButton());
 				//tileButtons[row][col].addActionListener(this);
 			}
 		}

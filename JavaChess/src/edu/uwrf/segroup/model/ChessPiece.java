@@ -13,6 +13,8 @@ public abstract class ChessPiece
 	
 	protected Side team;
 	protected Image image;
+	private int pixelx;
+	private int pixely;
 	
 	public ChessPiece(Side setTeam, String imagePath)
 	{
@@ -22,11 +24,13 @@ public abstract class ChessPiece
 		try
 		{
 	    	image = ImageIO.read(new File(imagePath));
+	    	System.out.println("Image loaded.");
 	    } catch (IOException ioe) {
 	    	System.out.println("Unable to load image file.");
 	    }
 		
 		team = setTeam;
+		setXYPixels();
 	}
 	
 	public Side getTeam()
@@ -39,6 +43,27 @@ public abstract class ChessPiece
 		return image;
 	}
 	
+	public void setXYPixels()
+	{
+		pixelx = Settings.SQUARE_DIM / 2;
+		pixely = Settings.SQUARE_DIM / 2;
+	}
+	
+	public void setXYPixels(int x, int y)
+	{
+		pixelx = x;
+		pixely = y;
+	}
+	
+	public int getXPixel()
+	{
+		return pixelx;
+	}
+	
+	public int getYPixel()
+	{
+		return pixely;
+	}
 	
 	/*
 	public void move(Square dest) {

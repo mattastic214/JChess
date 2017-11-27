@@ -44,6 +44,11 @@ public class Model
 		return chessboard;
 	}
 	
+	public Square getaSquare(int row, int col)
+	{
+		return chessboard[row][col];
+	}
+	
 	public void update(Graphics g)
 	{
 		
@@ -51,11 +56,15 @@ public class Model
 		{
 			for(int col = 0; col < Settings.NUM_COLS; col++)
 			{
-				chessboard[row][col].update(g);
+				if(chessboard[row][col].getOccupierImage() != null)
+				{
+					chessboard[row][col].update(g);
+					//System.out.println(chessboard[row][col].getOccupier().getXPixel());
+					//System.out.println("Hello!");
+				}
 			}
 		}
-		
-		System.out.println("Hello!");
+
 	}
 	
 	public void setPieces()
