@@ -41,7 +41,7 @@ public class OneBoardFactory implements IBoardFactory{
 	}
 
 	/**
-	 * Implementation of {@link IBoardFactory#createPieces(Side)}
+	 * Implementation of createWhitePieces method for an IBoardFactory
 	 */
 	@Override
 	public ArrayList<ChessPiece> createWhitePieces() {
@@ -79,6 +79,9 @@ public class OneBoardFactory implements IBoardFactory{
 		return pieces;
 	}
 	
+	/**
+	 * Implementation of createBlackSquares for an IBoardFactory
+	 */
 	@Override
 	public ArrayList<ChessPiece> createBlackPieces() {
 		
@@ -112,7 +115,10 @@ public class OneBoardFactory implements IBoardFactory{
 		
 		return pieces;
 	}
-
+	
+	/**
+	 * A method that implements populateSquares for an IBoardFactory
+	 */
 	@Override
 	public void populateSquares(Square[][] board, ArrayList<ChessPiece> white, ArrayList<ChessPiece> black) throws FriendlyCollisionException {
 		
@@ -135,31 +141,5 @@ public class OneBoardFactory implements IBoardFactory{
 		}
 		
 	}
-/*
-	@Override
-	public Image setImage() {
-		
-		Image image = null;
-		try {
-			image = ImageIO.read(new File(Settings.CHESS_BOARD_IMAGE));
-		} catch (IOException e) {
-			System.out.println("Unable to load image file.");
-		}
-		
-		return image;
-		
-	}
-*/
-	
-
-	
-
-	
-
-	
-
-	
-	
-	
 
 }

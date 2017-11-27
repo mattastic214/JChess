@@ -25,8 +25,13 @@ public class Model {
 	private Square[][] chessboard;
 	private ArrayList<ChessPiece> whitePieces;
 	private ArrayList<ChessPiece> blackPieces;
-	//private Image boardImage;
 	
+	/**
+	 * A Model constructor.
+	 * @param boardFactory The model constructor takes an IBoardFactory Interface as an argument.
+	 * The IBoardFactory is responsible for where and which Chess pieces the game, study, or tutorial will have.
+	 * @throws FriendlyCollisionException
+	 */
 	public Model(IBoardFactory boardFactory) throws FriendlyCollisionException {
 		System.out.println("Model()");
 		
@@ -34,9 +39,12 @@ public class Model {
 		this.whitePieces = boardFactory.createWhitePieces();
 		this.blackPieces = boardFactory.createBlackPieces();
 		boardFactory.populateSquares(chessboard, whitePieces, blackPieces);
-		//this.boardImage = boardFactory.setImage();
 	}
 	
+	/**
+	 * 
+	 * @return the Square[][] chessboard variable
+	 */
 	public Square[][] getSquares() {
 		
 		return chessboard;
