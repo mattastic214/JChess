@@ -6,5 +6,10 @@ public class Bishop extends ChessPiece {
 	{
 		super();
 	}
+	
+	public void move()
+	{
+		
+	}
 
 }

@@ -79,4 +79,7 @@ public abstract class ChessPiece {
 		this.Sider = Sider;
 	}
 	
+	public abstract void move();
+	
+	
 }

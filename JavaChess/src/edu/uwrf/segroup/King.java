@@ -7,4 +7,12 @@ public class King extends ChessPiece {
 		super();
 	}
 
+	@Override
+	public void move() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
 }
