@@ -10,6 +10,14 @@ public class Bishop extends ChessPiece{
 	}
 
 	@Override
+
+	public void moveRules(Square origin, Square[][] chessboard) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/*
+	@Override
 	protected void moveRules(Square origin, Square dest) {
 		
 		int xDifference = origin.getColID() - dest.getColID();
@@ -25,5 +33,8 @@ public class Bishop extends ChessPiece{
 		}
 		
 	}
+
+	*/
+
 
 }

@@ -3,6 +3,8 @@ package edu.uwrf.segroup.model;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.util.ArrayList;
+import java.util.Random;
+
 
 import javax.swing.JButton;
 
@@ -20,46 +22,57 @@ import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
  * @author matta
  *
  */
-public class Model {
+public class Model
+{
+
 
 	private Square[][] chessboard;
 	private ArrayList<ChessPiece> whitePieces;
 	private ArrayList<ChessPiece> blackPieces;
+	//private Image boardImage;
 	
-	/**
-	 * A Model constructor.
-	 * @param boardFactory The model constructor takes an IBoardFactory Interface as an argument.
-	 * The IBoardFactory is responsible for where and which Chess pieces the game, study, or tutorial will have.
-	 * @throws FriendlyCollisionException
-	 */
-	public Model(IBoardFactory boardFactory) throws FriendlyCollisionException {
+	public Model(IBoardFactory boardFactory) throws FriendlyCollisionException
+	{
 		System.out.println("Model()");
 		
+		Random r = new Random();
+		int random = 0;
+		
+		random = r.nextInt(2);
+		
 		this.chessboard = boardFactory.createSquares();
-		this.whitePieces = boardFactory.createWhitePieces();
-		this.blackPieces = boardFactory.createBlackPieces();
-		boardFactory.populateSquares(chessboard, whitePieces, blackPieces);
+		this.whitePieces = boardFactory.createWhitePieces(random);
+		this.blackPieces = boardFactory.createBlackPieces(random);
+		
+		boardFactory.populateSquares(chessboard, whitePieces, blackPieces, random);
+		//this.boardImage = boardFactory.setImage();
 	}
 	
-	/**
-	 * 
-	 * @return the Square[][] chessboard variable
-	 */
-	public Square[][] getSquares() {
-		
+	public Square[][] getSquares()
+	{
 		return chessboard;
 	}
 	
-	public void update(Graphics g) {
-		
-		for(int row = 0; row < Settings.NUM_ROWS; row++) {
-			for(int col = 0; col < Settings.NUM_COLS; col++) {
-				chessboard[row][col].update(g);
-			}
-		}
+	public Square getaSquare(int row, int col)
+	{
+		return chessboard[row][col];
 	}
 	
-	public void setPieces() {
+	public void update(Graphics g)
+	{
 		
+		for(int row = 0; row < Settings.NUM_ROWS; row++)
+		{
+			for(int col = 0; col < Settings.NUM_COLS; col++)
+			{
+				if(chessboard[row][col].getOccupierImage() != null)
+				{
+					chessboard[row][col].getOccupier().moveRules(chessboard[row][col], chessboard);
+					chessboard[row][col].update(g);
+				}
+			}
+		}
+
 	}
+	
 }

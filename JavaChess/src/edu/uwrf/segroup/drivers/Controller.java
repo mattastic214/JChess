@@ -1,5 +1,8 @@
 package edu.uwrf.segroup.drivers;
 
+
+import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
@@ -7,189 +10,67 @@ import java.awt.event.MouseListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
+
+import javax.swing.ImageIcon;
 import javax.swing.event.ChangeListener;
 
 import edu.uwrf.segroup.model.Model;
+import edu.uwrf.segroup.model.Settings;
 
-public class Controller implements MouseListener, ButtonModel {
+public class Controller implements ActionListener
+{
 	
 	Model model;
 	View view;
 	
-	public Controller() {
+	public Controller()
+	{
 		System.out.println("Controller()");
 	}
 	
-	public void addModel(Model m) {
+	public void addModel(Model m)
+	{
+
 		System.out.println("Controller: adding model");
 		this.model = m;
 	}
 	
-	public void addView(View v) {
+
+	public void addView(View v)
+	{
+
 		System.out.println("Controller: adding view");
 		this.view = v;
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void actionPerformed(ActionEvent arg0)
+	{
+		System.out.println("A Button Is Pressed.");
+		if(model.getaSquare(0, 0).getButton() == arg0.getSource())
+			System.out.println("A Match!");
+		for(int row = 0; row < Settings.NUM_ROWS; row++)
+		{
+			for(int col = 0; col < Settings.NUM_COLS; col++)
+			{
+				if(model.getaSquare(row, col).getButton() == arg0.getSource())
+				{
+					if(model.getaSquare(row, col).getFlag() == true)
+					{
+						model.getaSquare(row, col).setFlag(false);
+						//System.out.println(model.getaSquare(row, col).getFlag());
+						System.out.println(model.getaSquare(row, col).getOccupier().getClass().getSimpleName());
+					}
+					else
+					{
+						model.getaSquare(row, col).setFlag(true);
+						//System.out.println(model.getaSquare(row, col).getFlag());
+						System.out.println(model.getaSquare(row, col).getOccupier().getClass().getSimpleName());
+					}
+				}
+			}
+		}
 
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Object[] getSelectedObjects() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void addActionListener(ActionListener l) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void addChangeListener(ChangeListener l) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void addItemListener(ItemListener l) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public String getActionCommand() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int getMnemonic() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public boolean isArmed() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isEnabled() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isPressed() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isRollover() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isSelected() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void removeActionListener(ActionListener l) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void removeChangeListener(ChangeListener l) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void removeItemListener(ItemListener l) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setActionCommand(String s) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setArmed(boolean b) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setEnabled(boolean b) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setGroup(ButtonGroup group) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setMnemonic(int key) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setPressed(boolean b) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setRollover(boolean b) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setSelected(boolean b) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

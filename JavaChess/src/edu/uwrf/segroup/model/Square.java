@@ -21,13 +21,13 @@ import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
  * @author matta
  *
  */
-public class Square {
-
+public class Square
+{
 	private int rowID;
 	private int colID;
-	private int pixelx;				// The x-coord pixel at which the Square's occupier Icon should be displayed
-	private int pixely;				// The x-coord pixel at which the Square's occupier Icon should be displayed
-	private ChessPiece occupier;	// The particular Chesspiece that occupies the Square.
+	private ChessPiece occupier;
+	private JButton button;
+	private boolean flag;
 	
 	/**
 	 * Initializes an instance of a Square object
@@ -36,88 +36,123 @@ public class Square {
 	 * @param col
 	 * 				The Square object's column
 	 */
-	public Square(int row, int col) {
+	public Square(int row, int col)
+	{
 		rowID = row;
 		colID = col;
 		occupier = null;
+		button = new JButton();
+		flag = false;
 	}
 	
-	/**
-	 * Gets the row number in which the Square is located on the Chess Board
-	 * @return the int row number of the Square
-	 */
-	public int getRowID() {
+	public int getRowID()
+	{
 		return rowID;
 	}
 	
-	/**
-	 * Gets the column number in which the Square is located on the Chess Board
-	 * @return the int column number of the Square
-	 */
-	public int getColID() {
+	public int getColID()
+	{
 		return colID;
 	}
 	
-	/**
-	 * Gets the ChessPiece object that is currently occupying the Square
-	 * @return The ChessPiece occupying the Square
-	 */
-	public ChessPiece getOccupier() {
+	public boolean getFlag()
+	{
+		return flag;
+	}
+	
+	public void setFlag(boolean flag)
+	{
+		this.flag = flag;
+	}
+	
+	public ChessPiece getOccupier()
+	{
 		return occupier;
 	}
 	
-	/**
-	 * Gets the ImageIcon of the ChessPiece that is currently occupying the Square
-	 * @return the ImageIcon of the occupying ChessPiece.
-	 */
-	public ImageIcon getOccupierImage() {
+	public Image getOccupierImage()
+	{
 		if(occupier != null)
+		{
+			//System.out.println("Test!");
 			return occupier.getImage();
-		return null;
+		}
+		else
+			return null;
 	}
 	
-	/**
-	 * Sets the pixels where the Square should be displayed
-	 * @param p a Point object that represents where the IconImage will be displayed
-	 */
-	public void setPixels(Point p) {
-		pixelx = p.x;
-		pixely = p.y;
+	/*
+	public void setPixels(int x, int y)
+	{
+		if(occupier != null)
+		{
+			occupier.setXYPixels(x, y);
+		}
 	}
+	*/
 	
 	/**
-	 * This method sets the occupier ChessPiece of a the Square
-	 * @param entrant a ChessPiece that will be set as the occupier of the Square
+	 * When a
+	 * @param entrant
 	 * @throws FriendlyCollisionException 
 	 */
-	public void setOccupier(ChessPiece entrant) throws FriendlyCollisionException {
-		
-		this.checkCollision(entrant);
-		
+	public void setOccupier(ChessPiece entrant) throws FriendlyCollisionException
+	{
+		//this.checkCollision(entrant);
 		this.occupier = entrant;
 	}
 	
-	/**
-	 * This private method is invoked when a Square sends a ChessPiece from it to another Square.
-	 * The method sets the occupier of the Square to null, thus making the Square empty.
-	 */
-	private void vacate() {
+	
+	public void setImageIcon()
+	{
+		if(occupier != null && occupier.getImage() != null)
+		{
+			ImageIcon temp = new ImageIcon(occupier.getImage());
+			button.setIcon(temp);
+		}
+	}
+	
+	/*
+	public void setImageIcon(Image image)
+	{
+		if(occupier != null && image != null)
+		{
+			ImageIcon temp = new ImageIcon(image);
+			button.setIcon(temp);
+		}
+	}
+	
+	
+	public Icon getIcon()
+	{
+		if(occupier != null && occupier.getImage() != null)
+		{
+			return button.getIcon();
+		}
+		else
+			return null;
+	}
+	*/
+	
+	public JButton getButton()
+	{
+		return button;
+	}
+	
+	private void vacate()
+	{
 		occupier = null;
 	}
 	
-	/**
-	 * This private method is used to check if the ChessPiece entering a Square collides
-	 * with another ChessPiece. If the Square is occupied, the method checks if the Square's
-	 * occupier is on the same team, if it is, the FriendlyCollisionException event is thrown;
-	 * if the pieces are on opposite teams, the Square's occupier vacates the Square.
-	 * @param entrant
-	 */
-	private void checkCollision(ChessPiece entrant) {
+	private void checkCollision(ChessPiece entrant)
+	{
 	
-			try {
-				// Check if the Square 
-				if(this.getOccupier() != null) {
-					// Pieces are on the same team
+			try
+			{
+				// Pieces are on the same team
+				if(this.getOccupier() != null)
+				{
+
 					if(this.getOccupier().getTeam() == entrant.getTeam())
 						throw new FriendlyCollisionException();
 					// Pieces are on opposite teams
@@ -125,7 +160,9 @@ public class Square {
 						this.vacate();
 				}
 				
-			} catch (FriendlyCollisionException e) {
+
+			} catch (FriendlyCollisionException e)
+			{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
@@ -134,25 +171,31 @@ public class Square {
 	}
 	
 	/**
-	 * This method sends a Square's occupier to another Square.
-	 * @param destination A Square, to where the calling Square's occupier is sent.
-	 * @throws FriendlyCollisionException
+
+	 * Todo: Chess Square sends piece to another square.
 	 */
-	public void send(Square destination) throws FriendlyCollisionException{
-		this.occupier.moveRules(this, destination);
-		destination.setOccupier(this.occupier);
+	/*
+	public void send(ChessPiece mover, Square dest) throws FriendlyCollisionException
+	{
+		mover.moveRules(this, dest);
+		dest.setOccupier(mover);
 		this.vacate();
 	}
+	*/
 	
-	public void update(Graphics g) {
-		
+	public void update(Graphics g)
+	{
+		g.drawImage(occupier.getImage(), occupier.getXPixel(), occupier.getYPixel(), Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
+		setImageIcon();
+		//g.drawImage(image, x, y, size, size, null);
 		/*
-		//g.drawImage(occupier.getImage(), pixelx, pixely, Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
 		if(getOccupier() != null)
 			g.drawImage((Image)occupier.getImage(), pixelx, pixely, Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
 		else {
 			g.drawImage(null, pixelx, pixely, null);
-		}*/
+
+		}
+		*/
 	}
 	
 }

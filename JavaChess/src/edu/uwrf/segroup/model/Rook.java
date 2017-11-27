@@ -8,7 +8,8 @@ public class Rook extends ChessPiece {
 	}
 
 	@Override
-	protected void moveRules(Square origin, Square dest) {
+
+	public void moveRules(Square origin, Square[][] chessboard) {
 		// TODO Auto-generated method stub
 		
 	}
