@@ -19,10 +19,15 @@ import edu.uwrf.segroup.model.Model;
 import edu.uwrf.segroup.model.Settings;
 import edu.uwrf.segroup.model.Square;
 
+/**
+ * View is responsible for displaying the Chessboard game to the users
+ * @author matta
+ *
+ */
 public class View implements ActionListener
 {
 
-	private JFrame frame;
+	private JFrame frame;		
 	private Model model;
 	private JPanel panel;
 	private Square[][] set;
