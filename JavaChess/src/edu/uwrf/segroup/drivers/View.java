@@ -39,8 +39,6 @@ public class View implements ActionListener
         }
     }
 	
-	
-	
 	View()
 	{
 		System.out.println("View()");	
@@ -95,7 +93,7 @@ public class View implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
-		// TODO Auto-generated method stub
+		frame.repaint();
 	}
 	/*
 	

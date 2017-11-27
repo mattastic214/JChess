@@ -1,19 +1,30 @@
 package edu.uwrf.segroup.model;
 
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 public abstract class ChessPiece
 {
 	
 	protected Side team;
-	protected ImageIcon image;
+	protected Image image;
 	
 	public ChessPiece(Side setTeam, String imagePath)
 	{
-		URL iStream = getClass().getResource(imagePath);
-		image =  new ImageIcon(iStream);
+		//URL iStream = getClass().getResource(imagePath);
+		//image =  new ImageIcon(iStream);
+		
+		try
+		{
+	    	image = ImageIO.read(new File(imagePath));
+	    } catch (IOException ioe) {
+	    	System.out.println("Unable to load image file.");
+	    }
 		
 		team = setTeam;
 	}
@@ -23,7 +34,7 @@ public abstract class ChessPiece
 		return team;
 	}
 	
-	public ImageIcon getImage()
+	public Image getImage()
 	{
 		return image;
 	}

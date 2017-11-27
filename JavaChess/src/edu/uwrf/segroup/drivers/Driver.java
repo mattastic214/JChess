@@ -21,7 +21,7 @@ public class Driver
 		view.addModel(model);
 		view.addController(controller);
 		
-		//new Timer(50, view).start();
+		new Timer(50, view).start();
 
 	}
 

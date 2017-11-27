@@ -46,6 +46,7 @@ public class Model
 	
 	public void update(Graphics g)
 	{
+		
 		for(int row = 0; row < Settings.NUM_ROWS; row++)
 		{
 			for(int col = 0; col < Settings.NUM_COLS; col++)
@@ -53,6 +54,8 @@ public class Model
 				chessboard[row][col].update(g);
 			}
 		}
+		
+		System.out.println("Hello!");
 	}
 	
 	public void setPieces()

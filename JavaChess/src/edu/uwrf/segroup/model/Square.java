@@ -58,7 +58,7 @@ public class Square
 		return occupier;
 	}
 	
-	public ImageIcon getOccupierImage()
+	public Image getOccupierImage()
 	{
 		if(occupier != null)
 			return occupier.getImage();
@@ -124,13 +124,15 @@ public class Square
 	public void update(Graphics g)
 	{
 		//g.drawImage(image, x, y, size, size, null);
-		/*
+		
 		//g.drawImage(occupier.getImage(), pixelx, pixely, Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
+		/*
 		if(getOccupier() != null)
 			g.drawImage((Image)occupier.getImage(), pixelx, pixely, Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
 		else {
 			g.drawImage(null, pixelx, pixely, null);
-		}*/
+		}
+		*/
 	}
 	
 }
