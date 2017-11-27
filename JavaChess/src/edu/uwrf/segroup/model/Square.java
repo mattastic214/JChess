@@ -27,6 +27,7 @@ public class Square
 	private int colID;
 	private ChessPiece occupier;
 	private JButton button;
+	private boolean flag;
 	
 	/**
 	 * Initializes an instance of a Square object
@@ -41,6 +42,7 @@ public class Square
 		colID = col;
 		occupier = null;
 		button = new JButton();
+		flag = false;
 	}
 	
 	public int getRowID()
@@ -51,6 +53,16 @@ public class Square
 	public int getColID()
 	{
 		return colID;
+	}
+	
+	public boolean getFlag()
+	{
+		return flag;
+	}
+	
+	public void setFlag(boolean flag)
+	{
+		this.flag = flag;
 	}
 	
 	public ChessPiece getOccupier()

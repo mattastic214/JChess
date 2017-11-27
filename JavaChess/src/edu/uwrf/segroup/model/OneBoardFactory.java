@@ -143,7 +143,6 @@ public class OneBoardFactory implements IBoardFactory
 					board[i][j].setOccupier(IChess.next());
 			}
 		}
-		
 	}
 /*
 	@Override
@@ -160,16 +159,5 @@ public class OneBoardFactory implements IBoardFactory
 		
 	}
 */
-	
-
-	
-
-	
-
-	
-
-	
-	
-	
 
 }
