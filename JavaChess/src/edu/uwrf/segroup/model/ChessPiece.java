@@ -13,8 +13,8 @@ public abstract class ChessPiece
 	
 	protected Side team;
 	protected Image image;
-	private int pixelx;
-	private int pixely;
+	protected int pixelx;
+	protected int pixely;
 	
 	public ChessPiece(Side setTeam, String imagePath)
 	{
@@ -72,7 +72,7 @@ public abstract class ChessPiece
 			enforceRules(dest);
 	}*/
 	
-	protected abstract void moveRules(Square origin, Square dest);
+	public abstract void moveRules(Square origin, Square[][] chessboard);
 	
 	/**
 	// Needs to check Side of piece in Square

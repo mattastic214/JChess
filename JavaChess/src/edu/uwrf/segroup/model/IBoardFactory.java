@@ -13,10 +13,10 @@ import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
 public interface IBoardFactory {
 
 	//public ArrayList<ChessPiece> createPieces(Side side);
-	public ArrayList<ChessPiece> createWhitePieces();
-	public ArrayList<ChessPiece> createBlackPieces();
+	public ArrayList<ChessPiece> createWhitePieces(int random);
+	public ArrayList<ChessPiece> createBlackPieces(int random);
 	public Square[][] createSquares();
-	public void populateSquares(Square[][] board, ArrayList<ChessPiece> white, ArrayList<ChessPiece> black) 
+	public void populateSquares(Square[][] board, ArrayList<ChessPiece> white, ArrayList<ChessPiece> black, int random) 
 			throws FriendlyCollisionException;
 	//public Image setImage();
 }

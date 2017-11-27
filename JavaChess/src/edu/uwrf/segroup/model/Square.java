@@ -171,18 +171,20 @@ public class Square
 	/**
 	 * Todo: Chess Square sends piece to another square.
 	 */
+	/*
 	public void send(ChessPiece mover, Square dest) throws FriendlyCollisionException
 	{
 		mover.moveRules(this, dest);
 		dest.setOccupier(mover);
 		this.vacate();
 	}
+	*/
 	
 	public void update(Graphics g)
 	{
+		g.drawImage(occupier.getImage(), occupier.getXPixel(), occupier.getYPixel(), Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
 		setImageIcon();
 		//g.drawImage(image, x, y, size, size, null);
-		//g.drawImage(occupier.getImage(), occupier.getXPixel(), occupier.getYPixel(), Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
 		/*
 		if(getOccupier() != null)
 			g.drawImage((Image)occupier.getImage(), pixelx, pixely, Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);

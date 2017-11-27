@@ -3,6 +3,7 @@ package edu.uwrf.segroup.model;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.util.ArrayList;
+import java.util.Random;
 
 import javax.swing.JButton;
 
@@ -32,10 +33,16 @@ public class Model
 	{
 		System.out.println("Model()");
 		
+		Random r = new Random();
+		int random = 0;
+		
+		random = r.nextInt(2);
+		
 		this.chessboard = boardFactory.createSquares();
-		this.whitePieces = boardFactory.createWhitePieces();
-		this.blackPieces = boardFactory.createBlackPieces();
-		boardFactory.populateSquares(chessboard, whitePieces, blackPieces);
+		this.whitePieces = boardFactory.createWhitePieces(random);
+		this.blackPieces = boardFactory.createBlackPieces(random);
+		
+		boardFactory.populateSquares(chessboard, whitePieces, blackPieces, random);
 		//this.boardImage = boardFactory.setImage();
 	}
 	
@@ -58,17 +65,12 @@ public class Model
 			{
 				if(chessboard[row][col].getOccupierImage() != null)
 				{
+					chessboard[row][col].getOccupier().moveRules(chessboard[row][col], chessboard);
 					chessboard[row][col].update(g);
-					//System.out.println(chessboard[row][col].getOccupier().getXPixel());
-					//System.out.println("Hello!");
 				}
 			}
 		}
 
 	}
 	
-	public void setPieces()
-	{
-		
-	}
 }

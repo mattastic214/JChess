@@ -46,101 +46,278 @@ public class OneBoardFactory implements IBoardFactory
 	 * Implementation of {@link IBoardFactory#createPieces(Side)}
 	 */
 	@Override
-	public ArrayList<ChessPiece> createWhitePieces()
+	public ArrayList<ChessPiece> createWhitePieces(int random)
 	{
-		
-		int generated = 0;
-		ArrayList<ChessPiece> pieces = new ArrayList<ChessPiece>();
-		
-		
-		
-		Rook rookLeft = new Rook(Side.WHITE, Settings.WHITE_ROOK_IMAGE);
-		Knight knightLeft = new Knight(Side.WHITE, Settings.WHITE_KNIGHT_IMAGE);
-		Bishop bishopLeft = new Bishop(Side.WHITE, Settings.WHITE_BISHOP_IMAGE);
-		Queen queen = new Queen(Side.WHITE, Settings.WHITE_QUEEN_IMAGE);
-		King king = new King(Side.WHITE, Settings.WHITE_KING_IMAGE);
-		Bishop bishopRight = new Bishop(Side.WHITE, Settings.WHITE_BISHOP_IMAGE);
-		Knight knightRight = new Knight(Side.WHITE, Settings.WHITE_KNIGHT_IMAGE);
-		Rook rookRight = new Rook(Side.WHITE, Settings.WHITE_ROOK_IMAGE);
-			
-		pieces.add(rookLeft);
-		pieces.add(knightLeft);
-		pieces.add(bishopLeft);
-		pieces.add(queen);
-		pieces.add(king);
-		pieces.add(bishopRight);
-		pieces.add(knightRight);
-		pieces.add(rookRight);
-		
-		while(generated < 8)
+		if(random == 0)
 		{
-			generated++;
-			Pawn pawn = new Pawn(Side.WHITE, Settings.WHITE_PAWN_IMAGE);
-			pieces.add(pawn);
+			int generated = 0;
+			ArrayList<ChessPiece> pieces = new ArrayList<ChessPiece>();
+
+			Rook rookLeft = new Rook(Side.WHITE, Settings.WHITE_ROOK_IMAGE);
+			Knight knightLeft = new Knight(Side.WHITE, Settings.WHITE_KNIGHT_IMAGE);
+			Bishop bishopLeft = new Bishop(Side.WHITE, Settings.WHITE_BISHOP_IMAGE);
+			Queen queen = new Queen(Side.WHITE, Settings.WHITE_QUEEN_IMAGE);
+			King king = new King(Side.WHITE, Settings.WHITE_KING_IMAGE);
+			Bishop bishopRight = new Bishop(Side.WHITE, Settings.WHITE_BISHOP_IMAGE);
+			Knight knightRight = new Knight(Side.WHITE, Settings.WHITE_KNIGHT_IMAGE);
+			Rook rookRight = new Rook(Side.WHITE, Settings.WHITE_ROOK_IMAGE);
+				
+			pieces.add(rookLeft);
+			pieces.add(knightLeft);
+			pieces.add(bishopLeft);
+			pieces.add(queen);
+			pieces.add(king);
+			pieces.add(bishopRight);
+			pieces.add(knightRight);
+			pieces.add(rookRight);
+			
+			while(generated < 8)
+			{
+				generated++;
+				Pawn pawn = new Pawn(Side.WHITE, Settings.WHITE_PAWN_IMAGE);
+				pieces.add(pawn);
+			}
+			
+			return pieces;
 		}
-		
-		
-		return pieces;
+		else if(random == 1)
+		{
+			int generated = 0;
+			ArrayList<ChessPiece> pieces = new ArrayList<ChessPiece>();
+
+			while(generated < 8)
+			{
+				generated++;
+				Pawn pawn = new Pawn(Side.WHITE, Settings.WHITE_PAWN_IMAGE);
+				pieces.add(pawn);
+			}
+			
+			Rook rookLeft = new Rook(Side.WHITE, Settings.WHITE_ROOK_IMAGE);
+			Knight knightLeft = new Knight(Side.WHITE, Settings.WHITE_KNIGHT_IMAGE);
+			Bishop bishopLeft = new Bishop(Side.WHITE, Settings.WHITE_BISHOP_IMAGE);
+			Queen queen = new Queen(Side.WHITE, Settings.WHITE_QUEEN_IMAGE);
+			King king = new King(Side.WHITE, Settings.WHITE_KING_IMAGE);
+			Bishop bishopRight = new Bishop(Side.WHITE, Settings.WHITE_BISHOP_IMAGE);
+			Knight knightRight = new Knight(Side.WHITE, Settings.WHITE_KNIGHT_IMAGE);
+			Rook rookRight = new Rook(Side.WHITE, Settings.WHITE_ROOK_IMAGE);
+				
+			pieces.add(rookLeft);
+			pieces.add(knightLeft);
+			pieces.add(bishopLeft);
+			pieces.add(queen);
+			pieces.add(king);
+			pieces.add(bishopRight);
+			pieces.add(knightRight);
+			pieces.add(rookRight);
+			
+			return pieces;
+		}
+		else // If you don't want to random, this is default. Exact same code when random == 0.
+		{
+			int generated = 0;
+			ArrayList<ChessPiece> pieces = new ArrayList<ChessPiece>();
+
+			Rook rookLeft = new Rook(Side.WHITE, Settings.WHITE_ROOK_IMAGE);
+			Knight knightLeft = new Knight(Side.WHITE, Settings.WHITE_KNIGHT_IMAGE);
+			Bishop bishopLeft = new Bishop(Side.WHITE, Settings.WHITE_BISHOP_IMAGE);
+			Queen queen = new Queen(Side.WHITE, Settings.WHITE_QUEEN_IMAGE);
+			King king = new King(Side.WHITE, Settings.WHITE_KING_IMAGE);
+			Bishop bishopRight = new Bishop(Side.WHITE, Settings.WHITE_BISHOP_IMAGE);
+			Knight knightRight = new Knight(Side.WHITE, Settings.WHITE_KNIGHT_IMAGE);
+			Rook rookRight = new Rook(Side.WHITE, Settings.WHITE_ROOK_IMAGE);
+				
+			pieces.add(rookLeft);
+			pieces.add(knightLeft);
+			pieces.add(bishopLeft);
+			pieces.add(queen);
+			pieces.add(king);
+			pieces.add(bishopRight);
+			pieces.add(knightRight);
+			pieces.add(rookRight);
+			
+			while(generated < 8)
+			{
+				generated++;
+				Pawn pawn = new Pawn(Side.WHITE, Settings.WHITE_PAWN_IMAGE);
+				pieces.add(pawn);
+			}
+			
+			return pieces;
+		}
 	}
 	
 	@Override
-	public ArrayList<ChessPiece> createBlackPieces()
+	public ArrayList<ChessPiece> createBlackPieces(int random)
 	{
-		
-		int generated = 0;
-		ArrayList<ChessPiece> pieces = new ArrayList<ChessPiece>();
-		
-		while(generated < 8) {
-			generated++;
-			Pawn pawn = new Pawn(Side.BLACK, Settings.BLACK_PAWN_IMAGE);
-			pieces.add(pawn);
-		}
-		
-		Rook rookLeft = new Rook(Side.BLACK, Settings.BLACK_ROOK_IMAGE);
-		Knight knightLeft = new Knight(Side.BLACK, Settings.BLACK_KNIGHT_IMAGE);
-		Bishop bishopLeft = new Bishop(Side.BLACK, Settings.BLACK_BISHOP_IMAGE);
-		Queen queen = new Queen(Side.BLACK, Settings.BLACK_QUEEN_IMAGE);
-		King king = new King(Side.BLACK, Settings.BLACK_KING_IMAGE);
-		Bishop bishopRight = new Bishop(Side.BLACK, Settings.BLACK_BISHOP_IMAGE);
-		Knight knightRight = new Knight(Side.BLACK, Settings.BLACK_KNIGHT_IMAGE);
-		Rook rookRight = new Rook(Side.BLACK, Settings.BLACK_ROOK_IMAGE);
+		if(random == 0)
+		{
+			int generated = 0;
+			ArrayList<ChessPiece> pieces = new ArrayList<ChessPiece>();
 			
-		pieces.add(rookLeft);
-		pieces.add(knightLeft);
-		pieces.add(bishopLeft);
-		pieces.add(queen);
-		pieces.add(king);
-		pieces.add(bishopRight);
-		pieces.add(knightRight);
-		pieces.add(rookRight);
-		
-		
-		return pieces;
+			while(generated < 8) {
+				generated++;
+				Pawn pawn = new Pawn(Side.BLACK, Settings.BLACK_PAWN_IMAGE);
+				pieces.add(pawn);
+			}
+			
+			Rook rookLeft = new Rook(Side.BLACK, Settings.BLACK_ROOK_IMAGE);
+			Knight knightLeft = new Knight(Side.BLACK, Settings.BLACK_KNIGHT_IMAGE);
+			Bishop bishopLeft = new Bishop(Side.BLACK, Settings.BLACK_BISHOP_IMAGE);
+			Queen queen = new Queen(Side.BLACK, Settings.BLACK_QUEEN_IMAGE);
+			King king = new King(Side.BLACK, Settings.BLACK_KING_IMAGE);
+			Bishop bishopRight = new Bishop(Side.BLACK, Settings.BLACK_BISHOP_IMAGE);
+			Knight knightRight = new Knight(Side.BLACK, Settings.BLACK_KNIGHT_IMAGE);
+			Rook rookRight = new Rook(Side.BLACK, Settings.BLACK_ROOK_IMAGE);
+				
+			pieces.add(rookLeft);
+			pieces.add(knightLeft);
+			pieces.add(bishopLeft);
+			pieces.add(queen);
+			pieces.add(king);
+			pieces.add(bishopRight);
+			pieces.add(knightRight);
+			pieces.add(rookRight);
+			
+			
+			return pieces;
+		}
+		else if(random == 1)
+		{
+			int generated = 0;
+			ArrayList<ChessPiece> pieces = new ArrayList<ChessPiece>();
+			
+			Rook rookLeft = new Rook(Side.BLACK, Settings.BLACK_ROOK_IMAGE);
+			Knight knightLeft = new Knight(Side.BLACK, Settings.BLACK_KNIGHT_IMAGE);
+			Bishop bishopLeft = new Bishop(Side.BLACK, Settings.BLACK_BISHOP_IMAGE);
+			Queen queen = new Queen(Side.BLACK, Settings.BLACK_QUEEN_IMAGE);
+			King king = new King(Side.BLACK, Settings.BLACK_KING_IMAGE);
+			Bishop bishopRight = new Bishop(Side.BLACK, Settings.BLACK_BISHOP_IMAGE);
+			Knight knightRight = new Knight(Side.BLACK, Settings.BLACK_KNIGHT_IMAGE);
+			Rook rookRight = new Rook(Side.BLACK, Settings.BLACK_ROOK_IMAGE);
+				
+			pieces.add(rookLeft);
+			pieces.add(knightLeft);
+			pieces.add(bishopLeft);
+			pieces.add(queen);
+			pieces.add(king);
+			pieces.add(bishopRight);
+			pieces.add(knightRight);
+			pieces.add(rookRight);
+			
+			while(generated < 8) {
+				generated++;
+				Pawn pawn = new Pawn(Side.BLACK, Settings.BLACK_PAWN_IMAGE);
+				pieces.add(pawn);
+			}
+			
+			return pieces;
+		}
+		else
+		{
+			int generated = 0;
+			ArrayList<ChessPiece> pieces = new ArrayList<ChessPiece>();
+			
+			while(generated < 8) {
+				generated++;
+				Pawn pawn = new Pawn(Side.BLACK, Settings.BLACK_PAWN_IMAGE);
+				pieces.add(pawn);
+			}
+			
+			Rook rookLeft = new Rook(Side.BLACK, Settings.BLACK_ROOK_IMAGE);
+			Knight knightLeft = new Knight(Side.BLACK, Settings.BLACK_KNIGHT_IMAGE);
+			Bishop bishopLeft = new Bishop(Side.BLACK, Settings.BLACK_BISHOP_IMAGE);
+			Queen queen = new Queen(Side.BLACK, Settings.BLACK_QUEEN_IMAGE);
+			King king = new King(Side.BLACK, Settings.BLACK_KING_IMAGE);
+			Bishop bishopRight = new Bishop(Side.BLACK, Settings.BLACK_BISHOP_IMAGE);
+			Knight knightRight = new Knight(Side.BLACK, Settings.BLACK_KNIGHT_IMAGE);
+			Rook rookRight = new Rook(Side.BLACK, Settings.BLACK_ROOK_IMAGE);
+				
+			pieces.add(rookLeft);
+			pieces.add(knightLeft);
+			pieces.add(bishopLeft);
+			pieces.add(queen);
+			pieces.add(king);
+			pieces.add(bishopRight);
+			pieces.add(knightRight);
+			pieces.add(rookRight);
+			
+			return pieces;
+		}
 	}
 
 	@Override
-	public void populateSquares(Square[][] board, ArrayList<ChessPiece> white, ArrayList<ChessPiece> black) throws FriendlyCollisionException
+	public void populateSquares(Square[][] board, ArrayList<ChessPiece> white, ArrayList<ChessPiece> black, int random) throws FriendlyCollisionException
 	{
-		
-		ListIterator<ChessPiece> IChess = white.listIterator();
-		
-		for(int i = 0; i < 2; i++)
+		if(random == 0)
 		{
-			for(int j = 0; j < 8; j++)
+			ListIterator<ChessPiece> IChess = white.listIterator();
+			
+			for(int i = 0; i < 2; i++)
 			{
-				if(IChess.hasNext())
-					board[i][j].setOccupier(IChess.next());
+				for(int j = 0; j < 8; j++)
+				{
+					if(IChess.hasNext())
+						board[i][j].setOccupier(IChess.next());
+				}
+			}
+			
+			IChess = black.listIterator();
+
+			for(int i = 6; i < 8; i++)
+			{
+				for(int j = 0; j < 8; j++)
+				{
+					if(IChess.hasNext())
+						board[i][j].setOccupier(IChess.next());
+				}
 			}
 		}
-		
-		IChess = black.listIterator();
-
-		for(int i = 6; i < 8; i++)
+		else if(random == 1)
 		{
-			for(int j = 0; j < 8; j++)
+			ListIterator<ChessPiece> IChess = black.listIterator();
+			
+			for(int i = 0; i < 2; i++)
 			{
-				if(IChess.hasNext())
-					board[i][j].setOccupier(IChess.next());
+				for(int j = 0; j < 8; j++)
+				{
+					if(IChess.hasNext())
+						board[i][j].setOccupier(IChess.next());
+				}
+			}
+			
+			IChess = white.listIterator();
+
+			for(int i = 6; i < 8; i++)
+			{
+				for(int j = 0; j < 8; j++)
+				{
+					if(IChess.hasNext())
+						board[i][j].setOccupier(IChess.next());
+				}
+			}
+		}
+		else
+		{
+			ListIterator<ChessPiece> IChess = white.listIterator();
+			
+			for(int i = 0; i < 2; i++)
+			{
+				for(int j = 0; j < 8; j++)
+				{
+					if(IChess.hasNext())
+						board[i][j].setOccupier(IChess.next());
+				}
+			}
+			
+			IChess = black.listIterator();
+
+			for(int i = 6; i < 8; i++)
+			{
+				for(int j = 0; j < 8; j++)
+				{
+					if(IChess.hasNext())
+						board[i][j].setOccupier(IChess.next());
+				}
 			}
 		}
 	}
