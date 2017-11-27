@@ -19,6 +19,7 @@ import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
  * @author matta
  *
  */
+
 public class OneBoardFactory implements IBoardFactory
 {
 	
@@ -336,5 +337,6 @@ public class OneBoardFactory implements IBoardFactory
 		
 	}
 */
+
 
 }

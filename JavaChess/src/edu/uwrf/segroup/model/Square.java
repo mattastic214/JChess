@@ -152,6 +152,7 @@ public class Square
 				// Pieces are on the same team
 				if(this.getOccupier() != null)
 				{
+
 					if(this.getOccupier().getTeam() == entrant.getTeam())
 						throw new FriendlyCollisionException();
 					// Pieces are on opposite teams
@@ -159,6 +160,7 @@ public class Square
 						this.vacate();
 				}
 				
+
 			} catch (FriendlyCollisionException e)
 			{
 				// TODO Auto-generated catch block
@@ -169,6 +171,7 @@ public class Square
 	}
 	
 	/**
+
 	 * Todo: Chess Square sends piece to another square.
 	 */
 	/*
@@ -190,6 +193,7 @@ public class Square
 			g.drawImage((Image)occupier.getImage(), pixelx, pixely, Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
 		else {
 			g.drawImage(null, pixelx, pixely, null);
+
 		}
 		*/
 	}

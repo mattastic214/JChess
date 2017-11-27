@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.util.ArrayList;
 import java.util.Random;
 
+
 import javax.swing.JButton;
 
 import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
@@ -24,10 +25,10 @@ import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
 public class Model
 {
 
+
 	private Square[][] chessboard;
 	private ArrayList<ChessPiece> whitePieces;
 	private ArrayList<ChessPiece> blackPieces;
-	int random = 0;
 	//private Image boardImage;
 	
 	public Model(IBoardFactory boardFactory) throws FriendlyCollisionException
@@ -35,12 +36,9 @@ public class Model
 		System.out.println("Model()");
 		
 		Random r = new Random();
+		int random = 0;
 		
 		random = r.nextInt(2);
-		
-		// 0 means white is on top, black is on bottom
-		// 1 means black is on top, white is on bottom
-		// numbers not 0 or 1 means white is on top, black is on bottom
 		
 		this.chessboard = boardFactory.createSquares();
 		this.whitePieces = boardFactory.createWhitePieces(random);
@@ -69,7 +67,7 @@ public class Model
 			{
 				if(chessboard[row][col].getOccupierImage() != null)
 				{
-					chessboard[row][col].getOccupier().moveRules(chessboard[row][col], chessboard, random);
+					chessboard[row][col].getOccupier().moveRules(chessboard[row][col], chessboard);
 					chessboard[row][col].update(g);
 				}
 			}
