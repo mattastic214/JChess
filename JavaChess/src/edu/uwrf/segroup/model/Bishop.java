@@ -10,7 +10,7 @@ public class Bishop extends ChessPiece{
 	}
 
 	@Override
-	public void moveRules(Square origin, Square[][] chessboard) {
+	public void moveRules(Square origin, Square[][] chessboard, int random) {
 		// TODO Auto-generated method stub
 		
 	}
