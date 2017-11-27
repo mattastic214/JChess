@@ -29,8 +29,13 @@ public class Model
 	private Square[][] chessboard;
 	private ArrayList<ChessPiece> whitePieces;
 	private ArrayList<ChessPiece> blackPieces;
-	//private Image boardImage;
 	
+	/**
+	 * A Model constructor.
+	 * @param boardFactory The model constructor takes an IBoardFactory Interface as an argument.
+	 * The IBoardFactory is responsible for where and which Chess pieces the game, study, or tutorial will have.
+	 * @throws FriendlyCollisionException
+	 */
 	public Model(IBoardFactory boardFactory) throws FriendlyCollisionException
 	{
 		System.out.println("Model()");
@@ -48,16 +53,30 @@ public class Model
 		//this.boardImage = boardFactory.setImage();
 	}
 	
+	/**
+	 * 
+	 * @return gets the Square[][] chessboard of a Model
+	 */
 	public Square[][] getSquares()
 	{
 		return chessboard;
 	}
 	
+	/**
+	 * 
+	 * @param row Specifies the row number 0-7 of the Square
+	 * @param col Specifies the column number 0-7 of the Square
+	 * @return gets a particular Square object from the 2-D array chessboard
+	 */
 	public Square getaSquare(int row, int col)
 	{
 		return chessboard[row][col];
 	}
 	
+	/**
+	 * Upadates the the positions of the ChessPieces on the chess board
+	 * @param g
+	 */
 	public void update(Graphics g)
 	{
 		
