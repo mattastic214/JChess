@@ -30,13 +30,10 @@ public class Model
 	private Square[][] chessboard;
 	private ArrayList<ChessPiece> whitePieces;
 	private ArrayList<ChessPiece> blackPieces;
-<<<<<<< HEAD
 	private int random = 0;
 	//private int ActiveSquareCloser = 0;
 	private Square ActiveSquare1 = null;
 	private Square ActiveSquare2 = null;
-=======
->>>>>>> 1bb52bba2801cfa6a3cf543b9f0fed6f547209c6
 	//private Image boardImage;
 	
 	public Model(IBoardFactory boardFactory) throws FriendlyCollisionException
@@ -117,10 +114,7 @@ public class Model
 				
 				if(chessboard[row][col].getOccupierImage() != null)
 				{
-<<<<<<< HEAD
-=======
-					chessboard[row][col].getOccupier().moveRules(chessboard[row][col], chessboard);
->>>>>>> 1bb52bba2801cfa6a3cf543b9f0fed6f547209c6
+					chessboard[row][col].getOccupier().moveRules(chessboard[row][col], chessboard, random);
 					chessboard[row][col].update(g);
 				}
 			}

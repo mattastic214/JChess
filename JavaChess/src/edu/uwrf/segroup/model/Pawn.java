@@ -10,7 +10,7 @@ public class Pawn extends ChessPiece {
 	}
 
 	@Override
-	public void moveRules(Square origin, Square[][] chessboard)
+	public void moveRules(Square origin, Square[][] chessboard, int random)
 	{
 		if(origin.getFlag() == true)
 		{
@@ -23,7 +23,6 @@ public class Pawn extends ChessPiece {
 					if(chessboard[row][col].getFlag() == true && chessboard[row][col] != origin)
 					{
 						// Pawn rules here!
-<<<<<<< HEAD
 						if(random == 0)
 						{
 							if(team == Side.BLACK)
@@ -314,9 +313,6 @@ public class Pawn extends ChessPiece {
 						//chessboard[row][col].setFlag(false);
 						//origin.setFlag(false);
 						System.out.println("It Works!!");
-=======
-						
->>>>>>> 1bb52bba2801cfa6a3cf543b9f0fed6f547209c6
 						break;
 					}
 				}
