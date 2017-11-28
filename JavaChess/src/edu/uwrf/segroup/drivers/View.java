@@ -43,7 +43,9 @@ public class View implements ActionListener
         }
     }
 	
-
+	/**
+	 * The View constructor
+	 */
 	View()
 	{
 		System.out.println("View()");	
@@ -61,6 +63,12 @@ public class View implements ActionListener
 
 	} 
 	
+	/**
+	 * Adds a Controller argument to the View object
+	 * Note: Here is where each Square has an actionListener added to it.
+	 * The actionListener is the controller
+	 * @param controller
+	 */
 	public void addController(Controller controller)
 	{
 		System.out.println("View      : adding controller");
@@ -73,6 +81,10 @@ public class View implements ActionListener
 		}
 	}
 	
+	/**
+	 * Adds a Model argument to a View object
+	 * @param model
+	 */
 	public void addModel(Model model)
 	{
 		System.out.println("View      : adding model");
@@ -99,8 +111,10 @@ public class View implements ActionListener
 		}
 	}
 	
+	/**
+	 * Repaints the frame/GUI every time an ActionEvent is received.
+	 */
 	@Override
-
 	public void actionPerformed(ActionEvent e)
 	{
 		frame.repaint();

@@ -20,11 +20,18 @@ public class Controller implements ActionListener
 	Model model;
 	View view;
 	
+	/**
+	 * The Controller constructor
+	 */
 	public Controller()
 	{
 		System.out.println("Controller()");
 	}
 	
+	/**
+	 * Adds a Model argument to a controller object
+	 * @param m
+	 */
 	public void addModel(Model m)
 	{
 
@@ -32,14 +39,19 @@ public class Controller implements ActionListener
 		this.model = m;
 	}
 	
-
+	/**
+	 * Adds a View argument to a controller object
+	 * @param v
+	 */
 	public void addView(View v)
 	{
 
 		System.out.println("Controller: adding view");
 		this.view = v;
 	}
-
+	
+	// When a JButton/Square is pressed its flag is set to either true or false based on its
+	// previous value.
 	@Override
 	public void actionPerformed(ActionEvent arg0)
 	{
