@@ -37,43 +37,58 @@ public class Pawn extends ChessPiece {
 										origin.vacate();
 									}
 									// Going up 2 squares
-									else if(chessboard[origin.getRowID() - 2][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() - 2][origin.getColID()].getOccupier() == null)
+									if(chessboard[origin.getRowID() - 2][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() - 2][origin.getColID()].getOccupier() == null)
 									{
 										chessboard[origin.getRowID() - 2][origin.getColID()].setOccupier(origin.getOccupier());
 										origin.vacate();
 									}
 									// Eating to left
-									else if(chessboard[origin.getRowID() - 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier().getTeam() == Side.WHITE)
+									if(origin.getColID() != 0 && origin.getRowID() != 0)
 									{
-										chessboard[origin.getRowID() - 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() - 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier().getTeam() == Side.WHITE)
+										{
+											chessboard[origin.getRowID() - 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
 									// Eating to right
-									else if(chessboard[origin.getRowID() - 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier().getTeam() == Side.WHITE)
+									if(origin.getColID() != 7 && origin.getRowID() != 0)
 									{
-										chessboard[origin.getRowID() - 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() - 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier().getTeam() == Side.WHITE)
+										{
+											chessboard[origin.getRowID() - 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
 								}
 								else
 								{
 									// Going up 1 square
-									if(chessboard[origin.getRowID() - 1][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID()].getOccupier() == null)
+									if(origin.getRowID() != 0)
 									{
-										chessboard[origin.getRowID() - 1][origin.getColID()].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() - 1][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID()].getOccupier() == null)
+										{
+											chessboard[origin.getRowID() - 1][origin.getColID()].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
 									// Eating to left
-									else if(chessboard[origin.getRowID() - 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier().getTeam() == Side.WHITE)
+									if(origin.getColID() != 0 && origin.getRowID() != 0)
 									{
-										chessboard[origin.getRowID() - 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() - 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier().getTeam() == Side.WHITE)
+										{
+											chessboard[origin.getRowID() - 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
 									// Eating to right
-									else if(chessboard[origin.getRowID() - 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier().getTeam() == Side.WHITE)
+									if(origin.getColID() != 7 && origin.getRowID() != 0)
 									{
-										chessboard[origin.getRowID() - 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() - 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier().getTeam() == Side.WHITE)
+										{
+											chessboard[origin.getRowID() - 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
 								}
 							}
@@ -88,43 +103,58 @@ public class Pawn extends ChessPiece {
 										origin.vacate();
 									}
 									// Going up 2 squares
-									else if(chessboard[origin.getRowID() + 2][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() + 2][origin.getColID()].getOccupier() == null)
+									if(chessboard[origin.getRowID() + 2][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() + 2][origin.getColID()].getOccupier() == null)
 									{
 										chessboard[origin.getRowID() + 2][origin.getColID()].setOccupier(origin.getOccupier());
 										origin.vacate();
 									}
 									// Eating to right
-									else if(chessboard[origin.getRowID() + 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier().getTeam() == Side.BLACK)
+									if(origin.getColID() != 7 && origin.getRowID() != 7)
 									{
-										chessboard[origin.getRowID() + 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() + 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier().getTeam() == Side.BLACK)
+										{
+											chessboard[origin.getRowID() + 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
 									// Eating to left
-									else if(chessboard[origin.getRowID() + 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier().getTeam() == Side.BLACK)
+									if(origin.getColID() != 0 && origin.getRowID() != 7)
 									{
-										chessboard[origin.getRowID() + 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() + 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier().getTeam() == Side.BLACK)
+										{
+											chessboard[origin.getRowID() + 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
 								}
 								else
 								{
 									// Going up 1 square
-									if(chessboard[origin.getRowID() + 1][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID()].getOccupier() == null)
+									if(origin.getRowID() != 7)
 									{
-										chessboard[origin.getRowID() + 1][origin.getColID()].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() + 1][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID()].getOccupier() == null)
+										{
+											chessboard[origin.getRowID() + 1][origin.getColID()].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
 									// Eating to left
-									else if(chessboard[origin.getRowID() + 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier().getTeam() == Side.BLACK)
+									if(origin.getColID() != 0 && origin.getRowID() != 7)
 									{
-										chessboard[origin.getRowID() + 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() + 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier().getTeam() == Side.BLACK)
+										{
+											chessboard[origin.getRowID() + 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
 									// Eating to right
-									else if(chessboard[origin.getRowID() + 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier().getTeam() == Side.BLACK)
+									if(origin.getColID() != 7 && origin.getRowID() != 7)
 									{
-										chessboard[origin.getRowID() + 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() + 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier().getTeam() == Side.BLACK)
+										{
+											chessboard[origin.getRowID() + 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
 								}
 							}
@@ -135,43 +165,65 @@ public class Pawn extends ChessPiece {
 							{
 								if(origin.getRowID() == 1)
 								{
+									// Going up 1 square
 									if(chessboard[origin.getRowID() + 1][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID()].getOccupier() == null)
 									{
 										chessboard[origin.getRowID() + 1][origin.getColID()].setOccupier(origin.getOccupier());
 										origin.vacate();
 									}
-									else if(chessboard[origin.getRowID() + 2][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() + 2][origin.getColID()].getOccupier() == null)
+									// Going up 2 squares
+									if(chessboard[origin.getRowID() + 2][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() + 2][origin.getColID()].getOccupier() == null)
 									{
 										chessboard[origin.getRowID() + 2][origin.getColID()].setOccupier(origin.getOccupier());
 										origin.vacate();
 									}
-									else if(chessboard[origin.getRowID() + 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier().getTeam() == Side.WHITE)
+									// Eating to left
+									if(origin.getColID() != 0)
 									{
-										chessboard[origin.getRowID() + 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() + 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier().getTeam() == Side.WHITE)
+										{
+											chessboard[origin.getRowID() + 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
-									else if(chessboard[origin.getRowID() + 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier().getTeam() == Side.WHITE)
+									// Eating to right
+									if(origin.getColID() != 7)
 									{
-										chessboard[origin.getRowID() + 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() + 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier().getTeam() == Side.WHITE)
+										{
+											chessboard[origin.getRowID() + 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
 								}
 								else
 								{
-									if(chessboard[origin.getRowID() + 1][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID()].getOccupier() == null)
+									// Going up 1 square
+									if(origin.getRowID() != 7)
 									{
-										chessboard[origin.getRowID() + 1][origin.getColID()].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() + 1][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID()].getOccupier() == null)
+										{
+											chessboard[origin.getRowID() + 1][origin.getColID()].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
-									else if(chessboard[origin.getRowID() + 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier().getTeam() == Side.WHITE)
+									// Eating to left
+									if(origin.getColID() != 0 && origin.getRowID() != 7)
 									{
-										chessboard[origin.getRowID() + 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() + 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier().getTeam() == Side.WHITE)
+										{
+											chessboard[origin.getRowID() + 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
-									else if(chessboard[origin.getRowID() + 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier().getTeam() == Side.WHITE)
+									// Eating to right
+									if(origin.getColID() != 7 && origin.getRowID() != 7)
 									{
-										chessboard[origin.getRowID() + 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() + 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier().getTeam() == Side.WHITE)
+										{
+											chessboard[origin.getRowID() + 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
 								}
 							}
@@ -184,38 +236,53 @@ public class Pawn extends ChessPiece {
 										chessboard[origin.getRowID() - 1][origin.getColID()].setOccupier(origin.getOccupier());
 										origin.vacate();
 									}
-									else if(chessboard[origin.getRowID() - 2][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() - 2][origin.getColID()].getOccupier() == null)
+									if(chessboard[origin.getRowID() - 2][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() - 2][origin.getColID()].getOccupier() == null)
 									{
 										chessboard[origin.getRowID() - 2][origin.getColID()].setOccupier(origin.getOccupier());
 										origin.vacate();
 									}
-									else if(chessboard[origin.getRowID() - 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier().getTeam() == Side.BLACK)
+									if(origin.getColID() != 7)
 									{
-										chessboard[origin.getRowID() - 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() - 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier().getTeam() == Side.BLACK)
+										{
+											chessboard[origin.getRowID() - 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
-									else if(chessboard[origin.getRowID() - 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier().getTeam() == Side.BLACK)
+									if(origin.getColID() != 0)
 									{
-										chessboard[origin.getRowID() - 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() - 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier().getTeam() == Side.BLACK)
+										{
+											chessboard[origin.getRowID() - 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
 								}
 								else
 								{
-									if(chessboard[origin.getRowID() - 1][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID()].getOccupier() == null)
+									if(origin.getRowID() != 0)
 									{
-										chessboard[origin.getRowID() - 1][origin.getColID()].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() - 1][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID()].getOccupier() == null)
+										{
+											chessboard[origin.getRowID() - 1][origin.getColID()].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
-									else if(chessboard[origin.getRowID() - 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier().getTeam() == Side.BLACK)
+									if(origin.getColID() != 0 && origin.getRowID() != 0)
 									{
-										chessboard[origin.getRowID() - 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() - 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier().getTeam() == Side.BLACK)
+										{
+											chessboard[origin.getRowID() - 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
-									else if(chessboard[origin.getRowID() - 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier().getTeam() == Side.BLACK)
+									if(origin.getColID() != 7 && origin.getRowID() != 0)
 									{
-										chessboard[origin.getRowID() - 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() - 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier().getTeam() == Side.BLACK)
+										{
+											chessboard[origin.getRowID() - 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
 								}
 							}
@@ -231,38 +298,56 @@ public class Pawn extends ChessPiece {
 										chessboard[origin.getRowID() - 1][origin.getColID()].setOccupier(origin.getOccupier());
 										origin.vacate();
 									}
-									else if(chessboard[origin.getRowID() - 2][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() - 2][origin.getColID()].getOccupier() == null)
+									if(chessboard[origin.getRowID() - 2][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() - 2][origin.getColID()].getOccupier() == null)
 									{
 										chessboard[origin.getRowID() - 2][origin.getColID()].setOccupier(origin.getOccupier());
 										origin.vacate();
 									}
-									else if(chessboard[origin.getRowID() - 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier().getTeam() == Side.WHITE)
+									if(origin.getColID() != 0)
 									{
-										chessboard[origin.getRowID() - 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() - 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier().getTeam() == Side.WHITE)
+										{
+											chessboard[origin.getRowID() - 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
-									else if(chessboard[origin.getRowID() - 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier().getTeam() == Side.WHITE)
+									if(origin.getColID() != 7)
 									{
-										chessboard[origin.getRowID() - 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() - 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier().getTeam() == Side.WHITE)
+										{
+											chessboard[origin.getRowID() - 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
 								}
 								else
 								{
-									if(chessboard[origin.getRowID() - 1][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID()].getOccupier() == null)
+									// Going up 1 square
+									if(origin.getRowID() != 0)
 									{
-										chessboard[origin.getRowID() - 1][origin.getColID()].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() - 1][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID()].getOccupier() == null)
+										{
+											chessboard[origin.getRowID() - 1][origin.getColID()].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
-									else if(chessboard[origin.getRowID() - 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier().getTeam() == Side.WHITE)
+									// Eating to left
+									if(origin.getColID() != 0 && origin.getRowID() != 0)
 									{
-										chessboard[origin.getRowID() - 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() - 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() - 1].getOccupier().getTeam() == Side.WHITE)
+										{
+											chessboard[origin.getRowID() - 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
-									else if(chessboard[origin.getRowID() - 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier().getTeam() == Side.WHITE)
+									// Eating to right
+									if(origin.getColID() != 7 && origin.getRowID() != 0)
 									{
-										chessboard[origin.getRowID() - 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() - 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() - 1][origin.getColID() + 1].getOccupier().getTeam() == Side.WHITE)
+										{
+											chessboard[origin.getRowID() - 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
 								}
 							}
@@ -275,38 +360,56 @@ public class Pawn extends ChessPiece {
 										chessboard[origin.getRowID() + 1][origin.getColID()].setOccupier(origin.getOccupier());
 										origin.vacate();
 									}
-									else if(chessboard[origin.getRowID() + 2][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() + 2][origin.getColID()].getOccupier() == null)
+									if(chessboard[origin.getRowID() + 2][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() + 2][origin.getColID()].getOccupier() == null)
 									{
 										chessboard[origin.getRowID() + 2][origin.getColID()].setOccupier(origin.getOccupier());
 										origin.vacate();
 									}
-									else if(chessboard[origin.getRowID() + 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier().getTeam() == Side.BLACK)
+									if(origin.getColID() != 7)
 									{
-										chessboard[origin.getRowID() + 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() + 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier().getTeam() == Side.BLACK)
+										{
+											chessboard[origin.getRowID() + 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
-									else if(chessboard[origin.getRowID() + 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier().getTeam() == Side.BLACK)
+									if(origin.getColID() != 0)
 									{
-										chessboard[origin.getRowID() + 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() + 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier().getTeam() == Side.BLACK)
+										{
+											chessboard[origin.getRowID() + 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
 								}
 								else
 								{
-									if(chessboard[origin.getRowID() + 1][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID()].getOccupier() == null)
+									// Going up 1 square
+									if(origin.getRowID() != 7)
 									{
-										chessboard[origin.getRowID() + 1][origin.getColID()].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() + 1][origin.getColID()].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID()].getOccupier() == null)
+										{
+											chessboard[origin.getRowID() + 1][origin.getColID()].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
-									else if(chessboard[origin.getRowID() + 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier().getTeam() == Side.BLACK)
+									// Eating to left
+									if(origin.getColID() != 0 && origin.getRowID() != 7)
 									{
-										chessboard[origin.getRowID() + 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() + 1][origin.getColID() - 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() - 1].getOccupier().getTeam() == Side.BLACK)
+										{
+											chessboard[origin.getRowID() + 1][origin.getColID() - 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
-									else if(chessboard[origin.getRowID() + 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier().getTeam() == Side.BLACK)
+									// Eating to right
+									if(origin.getColID() != 7 && origin.getRowID() != 7)
 									{
-										chessboard[origin.getRowID() + 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
-										origin.vacate();
+										if(chessboard[origin.getRowID() + 1][origin.getColID() + 1].getFlag() == true && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier() != null && chessboard[origin.getRowID() + 1][origin.getColID() + 1].getOccupier().getTeam() == Side.BLACK)
+										{
+											chessboard[origin.getRowID() + 1][origin.getColID() + 1].setOccupier(origin.getOccupier());
+											origin.vacate();
+										}
 									}
 								}
 							}
