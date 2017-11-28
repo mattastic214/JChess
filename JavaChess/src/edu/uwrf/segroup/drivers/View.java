@@ -19,7 +19,6 @@ import edu.uwrf.segroup.model.Model;
 import edu.uwrf.segroup.model.Settings;
 import edu.uwrf.segroup.model.Square;
 
-
 public class View implements ActionListener
 {
 
@@ -27,6 +26,7 @@ public class View implements ActionListener
 	private Model model;
 	private JPanel panel;
 	private Square[][] set;
+
 	//private JButton[][] tileButtons;
 	
 	@SuppressWarnings("serial")
@@ -40,6 +40,7 @@ public class View implements ActionListener
         }
     }
 	
+
 	View()
 	{
 		System.out.println("View()");	
@@ -49,10 +50,12 @@ public class View implements ActionListener
 		panel = new MyPanel();
 		panel.setLayout(new GridLayout(8, 8));
 
+
 		frame.setSize(Settings.WIDTH, Settings.HEIGHT);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		frame.setVisible(true);
+
 
 		//temp = new ImageIcon();
 	} 
@@ -76,6 +79,7 @@ public class View implements ActionListener
 		this.model = model;
 		set = model.getSquares();
 		
+
 		//tileButtons = new JButton[Settings.NUM_ROWS][Settings.NUM_COLS];
 		
 		frame.add(panel);
@@ -102,6 +106,7 @@ public class View implements ActionListener
 	}
 	
 	@Override
+
 	public void actionPerformed(ActionEvent e)
 	{
 		frame.repaint();
@@ -136,6 +141,7 @@ public class View implements ActionListener
 		
 		
 		private class ButtonHandler implements ActionListener{
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
@@ -158,21 +164,25 @@ public class View implements ActionListener
 			// TODO Auto-generated method stub
 			
 		}
+
 		@Override
 		public void layoutContainer(Container arg0) {
 			// TODO Auto-generated method stub
 			
 		}
+
 		@Override
 		public Dimension minimumLayoutSize(Container arg0) {
 			// TODO Auto-generated method stub
 			return null;
 		}
+
 		@Override
 		public Dimension preferredLayoutSize(Container arg0) {
 			// TODO Auto-generated method stub
 			return new Dimension(Settings.SQUARE_DIM, Settings.SQUARE_DIM);
 		}
+
 		@Override
 		public void removeLayoutComponent(Component arg0) {
 			// TODO Auto-generated method stub

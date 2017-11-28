@@ -8,17 +8,20 @@ public class King extends ChessPiece {
 	}
 
 	@Override
-	public void moveRules(Square origin, Square[][] chessboard, int random) {
+
+	public void moveRules(Square origin, Square[][] chessboard) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	/*
 	@Override
+
 	protected void moveRules(Square origin, Square dest) {
 		// TODO Auto-generated method stub
 		
 	}
 	*/
+
 
 }

@@ -1,5 +1,6 @@
 package edu.uwrf.segroup.drivers;
 
+
 import javax.swing.Timer;
 
 import edu.uwrf.segroup.model.*;
@@ -21,7 +22,7 @@ public class Driver
 		view.addModel(model);
 		view.addController(controller);
 		
-		new Timer(1000, view).start();
+		new Timer(50, view).start();
 
 	}
 

@@ -1,6 +1,8 @@
 package edu.uwrf.segroup.drivers;
 
+
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
@@ -8,6 +10,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
+
 import javax.swing.ImageIcon;
 import javax.swing.event.ChangeListener;
 
@@ -27,12 +30,15 @@ public class Controller implements ActionListener
 	
 	public void addModel(Model m)
 	{
+
 		System.out.println("Controller: adding model");
 		this.model = m;
 	}
 	
+
 	public void addView(View v)
 	{
+
 		System.out.println("Controller: adding view");
 		this.view = v;
 	}
@@ -52,18 +58,19 @@ public class Controller implements ActionListener
 					if(model.getaSquare(row, col).getFlag() == true)
 					{
 						model.getaSquare(row, col).setFlag(false);
-						//System.out.println(model.getaSquare(row, col).getFlag());
-						System.out.println(model.getaSquare(row, col).getOccupier().getClass().getSimpleName());
+						System.out.println(model.getaSquare(row, col).getFlag());
+						//System.out.println(model.getaSquare(row, col).getOccupier().getClass().getSimpleName());
 					}
 					else
 					{
 						model.getaSquare(row, col).setFlag(true);
-						//System.out.println(model.getaSquare(row, col).getFlag());
-						System.out.println(model.getaSquare(row, col).getOccupier().getClass().getSimpleName());
+						System.out.println(model.getaSquare(row, col).getFlag());
+						//System.out.println(model.getaSquare(row, col).getOccupier().getClass().getSimpleName());
 					}
 				}
 			}
 		}
+
 	}
 
 }

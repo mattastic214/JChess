@@ -3,6 +3,7 @@ package edu.uwrf.segroup.model.exceptions;
 public class SendBackException extends Exception {
 
 	
+
 	/**
 	 * 
 	 */

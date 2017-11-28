@@ -72,7 +72,7 @@ public abstract class ChessPiece
 			enforceRules(dest);
 	}*/
 	
-	public abstract void moveRules(Square origin, Square[][] chessboard, int random);
+	public abstract void moveRules(Square origin, Square[][] chessboard);
 	
 	/**
 	// Needs to check Side of piece in Square
