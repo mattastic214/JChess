@@ -61,29 +61,52 @@ public abstract class ChessPiece
 		return image;
 	}
 	
+	/**
+	 * A default setter for placing the image of a ChessPiece on a Square
+	 */
 	public void setXYPixels()
 	{
 		pixelx = Settings.SQUARE_DIM / 2;
 		pixely = Settings.SQUARE_DIM / 2;
 	}
 	
+	/**
+	 * Manually set the pixels of where a ChessPieces image should be displayed on
+	 * a Square
+	 * @param x the x-coordinate pixel
+	 * @param y the y-coordinate pixel
+	 */
 	public void setXYPixels(int x, int y)
 	{
 		pixelx = x;
 		pixely = y;
 	}
 	
+	/**
+	 * 
+	 * @return The x-coordinate pixel
+	 */
 	public int getXPixel()
 	{
 		return pixelx;
 	}
 	
+	/**
+	 * 
+	 * @return The y-coordinate pixel
+	 */
 	public int getYPixel()
 	{
 		return pixely;
 	}
 	
-	
+	/**
+	 * An abstract method, when implemented will designate the rules of how a
+	 * piece should move.
+	 * @param origin The Square at which the ChessPiece starts/moves from
+	 * @param chessboard The chessboard that represents the game
+	 * @param random
+	 */
 	public abstract void moveRules(Square origin, Square[][] chessboard, int random);
 	
 }

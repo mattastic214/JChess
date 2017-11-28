@@ -97,16 +97,6 @@ public class Square
 			return null;
 	}
 	
-	/*
-	public void setPixels(int x, int y)
-	{
-		if(occupier != null)
-		{
-			occupier.setXYPixels(x, y);
-		}
-	}
-	*/
-	
 	/**
 	 * This method sets the occupier ChessPiece of a the Square.
 	 * @param entrant
@@ -118,7 +108,9 @@ public class Square
 		this.occupier = entrant;
 	}
 	
-	
+	/**
+	 * Sets the ImageIcon of a Square
+	 */
 	public void setImageIcon()
 	{
 		if(occupier != null && occupier.getImage() != null)
@@ -130,34 +122,18 @@ public class Square
 			button.setIcon(null);
 	}
 	
-	/*
-	public void setImageIcon(Image image)
-	{
-		if(occupier != null && image != null)
-		{
-			ImageIcon temp = new ImageIcon(image);
-			button.setIcon(temp);
-		}
-	}
-	
-	
-	public Icon getIcon()
-	{
-		if(occupier != null && occupier.getImage() != null)
-		{
-			return button.getIcon();
-		}
-		else
-			return null;
-	}
-	*/
-	
+	/**
+	 * 
+	 * @return the JButton of the Square is returned
+	 */
 	public JButton getButton()
 	{
 		return button;
 	}
 	
-
+	/**
+	 * This private method is used to remove the current occupier of a Square
+	 */
 	public void vacate()
 	{
 		occupier = null;
@@ -197,18 +173,9 @@ public class Square
 	}
 	
 	/**
-
-	 * Todo: Chess Square sends piece to another square.
+	 * Updates the Graphics g of a particular Square.
+	 * @param g
 	 */
-	/*
-	public void send(ChessPiece mover, Square dest) throws FriendlyCollisionException
-	{
-		mover.moveRules(this, dest);
-		dest.setOccupier(mover);
-		this.vacate();
-	}
-	*/
-	
 	public void update(Graphics g)
 	{
 		//g.drawImage(occupier.getImage(), occupier.getXPixel(), occupier.getYPixel(), Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
