@@ -45,11 +45,19 @@ public class Square
 		flag = false;
 	}
 	
+	/**
+	 * Gets the row number in which the Square is located on the Chess Board
+	 * @return the int row number of the Square
+	 */
 	public int getRowID()
 	{
 		return rowID;
 	}
 	
+	/**
+	 * Gets the column number in which the Square is located on the Chess Board
+	 * @return the int column number of the Square
+	 */
 	public int getColID()
 	{
 		return colID;
@@ -65,11 +73,19 @@ public class Square
 		this.flag = flag;
 	}
 	
+	/**
+	 * Gets the ChessPiece object that is currently occupying the Square
+	 * @return The ChessPiece occupying the Square
+	 */
 	public ChessPiece getOccupier()
 	{
 		return occupier;
 	}
 	
+	/**
+	 * Gets the ImageIcon of the ChessPiece that is currently occupying the Square
+	 * @return the ImageIcon of the occupying ChessPiece.
+	 */
 	public Image getOccupierImage()
 	{
 		if(occupier != null)
@@ -92,7 +108,7 @@ public class Square
 	*/
 	
 	/**
-	 * When a
+	 * This method sets the occupier ChessPiece of a the Square.
 	 * @param entrant
 	 * @throws FriendlyCollisionException 
 	 */
@@ -141,20 +157,28 @@ public class Square
 		return button;
 	}
 	
+
 	public void vacate()
 	{
 		occupier = null;
 	}
 	
+	/**
+	 * This private method is used to check if the ChessPiece entering a Square collides
+	 * with another ChessPiece. If the Square is occupied, the method checks if the Square's
+	 * occupier is on the same team, if it is, the FriendlyCollisionException event is thrown;
+	 * if the pieces are on opposite teams, the Square's occupier vacates the Square.
+	 * @param entrant
+	 */
 	private void checkCollision(ChessPiece entrant)
 	{
 	
 			try
 			{
-				// Pieces are on the same team
+				// Is the Square occupied?
 				if(this.getOccupier() != null)
 				{
-
+					// Check if ChessPieces are on the same team
 					if(this.getOccupier().getTeam() == entrant.getTeam())
 						throw new FriendlyCollisionException();
 					// Pieces are on opposite teams

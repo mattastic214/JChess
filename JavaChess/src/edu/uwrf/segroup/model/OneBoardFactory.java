@@ -44,7 +44,7 @@ public class OneBoardFactory implements IBoardFactory
 	}
 
 	/**
-	 * Implementation of {@link IBoardFactory#createPieces(Side)}
+	 * Implementation of createWhitePieces method for an IBoardFactory
 	 */
 	@Override
 	public ArrayList<ChessPiece> createWhitePieces(int random)
@@ -147,6 +147,9 @@ public class OneBoardFactory implements IBoardFactory
 		}
 	}
 	
+	/**
+	 * Implementation of createBlackPieces for an IBoardFactory
+	 */
 	@Override
 	public ArrayList<ChessPiece> createBlackPieces(int random)
 	{
@@ -246,6 +249,9 @@ public class OneBoardFactory implements IBoardFactory
 		}
 	}
 
+	/**
+	 * A method that implements populateSquares for an IBoardFactory
+	 */
 	@Override
 	public void populateSquares(Square[][] board, ArrayList<ChessPiece> white, ArrayList<ChessPiece> black, int random) throws FriendlyCollisionException
 	{
