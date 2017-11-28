@@ -112,7 +112,7 @@ public class Square
 	 * @param entrant
 	 * @throws FriendlyCollisionException 
 	 */
-	public void setOccupier(ChessPiece entrant) throws FriendlyCollisionException
+	public void setOccupier(ChessPiece entrant)
 	{
 		//this.checkCollision(entrant);
 		this.occupier = entrant;
@@ -126,6 +126,8 @@ public class Square
 			ImageIcon temp = new ImageIcon(occupier.getImage());
 			button.setIcon(temp);
 		}
+		else if(occupier == null)
+			button.setIcon(null);
 	}
 	
 	/*
@@ -155,11 +157,8 @@ public class Square
 		return button;
 	}
 	
-	/**
-	 * This private method is invoked when a Square sends a ChessPiece from it to another Square.
-	 * The method sets the occupier of the Square to null, thus making the Square empty.
-	 */
-	private void vacate()
+
+	public void vacate()
 	{
 		occupier = null;
 	}
@@ -212,7 +211,7 @@ public class Square
 	
 	public void update(Graphics g)
 	{
-		g.drawImage(occupier.getImage(), occupier.getXPixel(), occupier.getYPixel(), Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
+		//g.drawImage(occupier.getImage(), occupier.getXPixel(), occupier.getYPixel(), Settings.SQUARE_DIM, Settings.SQUARE_DIM, null);
 		setImageIcon();
 		//g.drawImage(image, x, y, size, size, null);
 		/*

@@ -84,6 +84,6 @@ public abstract class ChessPiece
 	}
 	
 	
-	public abstract void moveRules(Square origin, Square[][] chessboard);
+	public abstract void moveRules(Square origin, Square[][] chessboard, int random);
 	
 }
