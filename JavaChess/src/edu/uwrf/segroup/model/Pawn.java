@@ -12,6 +12,7 @@ public class Pawn extends ChessPiece {
 	@Override
 	public void moveRules(Square origin, Square[][] chessboard, int random)
 	{
+
 		if(origin.getFlag() == true)
 		{
 			//System.out.println("asdf!");
@@ -318,7 +319,6 @@ public class Pawn extends ChessPiece {
 				}
 			}
 		}
-		
 	}
 
 
