@@ -61,9 +61,11 @@ public abstract class ChessPiece
 		return image;
 	}
 	
+	
 	/**
 	 * A default setter for placing the image of a ChessPiece on a Square
 	 */
+	
 	public void setXYPixels()
 	{
 		pixelx = Settings.SQUARE_DIM / 2;

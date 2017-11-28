@@ -2,7 +2,11 @@ package edu.uwrf.segroup.model;
 
 import java.awt.Color;
 
-
+/**
+ * Settings is a place to store our public final variables of sizes, colors, and images.
+ * @author matta, charles
+ *
+ */
 public final class Settings {
 
 	private Settings() {};

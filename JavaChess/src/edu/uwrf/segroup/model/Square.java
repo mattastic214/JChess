@@ -63,11 +63,20 @@ public class Square
 		return colID;
 	}
 	
+	/**
+	 * Gets the flag of the Square to determine if its active or not.
+	 * @return the boolean flag of the Square
+	 */
 	public boolean getFlag()
 	{
 		return flag;
 	}
 	
+	/**
+	 * Sets the flag of the Square to make it active or deactive.
+	 * @param flag
+	 * 				The Square's flag.
+	 */
 	public void setFlag(boolean flag)
 	{
 		this.flag = flag;
@@ -123,7 +132,7 @@ public class Square
 	}
 	
 	/**
-	 * 
+	 * The Button of the Square
 	 * @return the JButton of the Square is returned
 	 */
 	public JButton getButton()
@@ -132,20 +141,21 @@ public class Square
 	}
 	
 	/**
-	 * This private method is used to remove the current occupier of a Square
+	 * This public method is used to remove the current occupier of a Square
 	 */
 	public void vacate()
 	{
 		occupier = null;
 	}
 	
+	/*
 	/**
 	 * This private method is used to check if the ChessPiece entering a Square collides
 	 * with another ChessPiece. If the Square is occupied, the method checks if the Square's
 	 * occupier is on the same team, if it is, the FriendlyCollisionException event is thrown;
 	 * if the pieces are on opposite teams, the Square's occupier vacates the Square.
 	 * @param entrant
-	 */
+	 
 	private void checkCollision(ChessPiece entrant)
 	{
 	
@@ -171,9 +181,10 @@ public class Square
 	
 			
 	}
+	*/
 	
 	/**
-	 * Updates the Graphics g of a particular Square.
+	 * Updates the Graphics of the Square by setting ImageIcon.
 	 * @param g
 	 */
 	public void update(Graphics g)
