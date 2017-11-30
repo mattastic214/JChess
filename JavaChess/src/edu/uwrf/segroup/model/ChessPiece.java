@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 
 /**
  * The abstract class ChessPiece represents chess pieces in the game of chess. ChessPiece
- * has fields and methods that are common to all extensions of ChessPiece
+ * has fields and methods that are common to all extensions of ChessPiece.
  * @author matta
  *
  */
@@ -39,7 +39,7 @@ public abstract class ChessPiece
 	    }
 		
 		team = setTeam;
-		setXYPixels();
+		//setXYPixels();
 	}
 	
 	/**
@@ -62,10 +62,11 @@ public abstract class ChessPiece
 	}
 	
 	
+	/*
 	/**
 	 * A default setter for placing the image of a ChessPiece on a Square
 	 */
-	
+	/*
 	public void setXYPixels()
 	{
 		pixelx = Settings.SQUARE_DIM / 2;
@@ -78,6 +79,7 @@ public abstract class ChessPiece
 	 * @param x the x-coordinate pixel
 	 * @param y the y-coordinate pixel
 	 */
+	/*
 	public void setXYPixels(int x, int y)
 	{
 		pixelx = x;
@@ -88,6 +90,7 @@ public abstract class ChessPiece
 	 * 
 	 * @return The x-coordinate pixel
 	 */
+	/*
 	public int getXPixel()
 	{
 		return pixelx;
@@ -97,17 +100,19 @@ public abstract class ChessPiece
 	 * 
 	 * @return The y-coordinate pixel
 	 */
+	/*
 	public int getYPixel()
 	{
 		return pixely;
 	}
+	*/
 	
 	/**
 	 * An abstract method, when implemented will designate the rules of how a
 	 * piece should move.
 	 * @param origin The Square at which the ChessPiece starts/moves from
 	 * @param chessboard The chessboard that represents the game
-	 * @param random
+	 * @param the random integer that was used to determined orientation of the players and chessboard.
 	 */
 	public abstract void moveRules(Square origin, Square[][] chessboard, int random);
 	

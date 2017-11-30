@@ -3,7 +3,7 @@ package edu.uwrf.segroup.model;
 import java.awt.Color;
 
 /**
- * Settings is a place to store our public final variables of sizes, colors, and images.
+ * Settings is a place to store our public final variables of sizes, colors, and images. These public variables are used throughout our classes in JavaChess.
  * @author matta, charles
  *
  */

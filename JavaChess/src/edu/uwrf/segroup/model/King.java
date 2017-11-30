@@ -1,17 +1,15 @@
 package edu.uwrf.segroup.model;
 
 /**
- * The constructor of the King class.
+ * The King object which extends Chesspiece object.
  * @author matta, charles
  */
 public class King extends ChessPiece {
 
 	/**
 	 * The constructor of the King class.
-	 * @param setTeam
-	 * 				Side Object to set Team of the King.
-	 * @param imagePath
-	 * 				The image to display the King
+	 * @param setTeam Sets the ChessPiece team to either WHITE or BLACK enum type
+	 * @param imagePath The path of the image that is used to represent the ChessPiece.
 	 * @author matta, charles
 	 */
 	public King(Side setTeam, String imagePath)

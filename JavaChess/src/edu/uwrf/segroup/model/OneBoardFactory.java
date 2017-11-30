@@ -8,7 +8,7 @@ import java.util.ListIterator;
 
 import javax.imageio.ImageIO;
 
-import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
+//import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
 
 /**
  * OneBoardFactory is a class that implements the {@link IBoardFactory}
@@ -19,7 +19,6 @@ import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
  * @author matta
  *
  */
-
 public class OneBoardFactory implements IBoardFactory
 {
 	
@@ -45,6 +44,7 @@ public class OneBoardFactory implements IBoardFactory
 
 	/**
 	 * Implementation of createWhitePieces method for an IBoardFactory
+	 * @param random int random integer used to determined orientation of chessboard.
 	 */
 	@Override
 	public ArrayList<ChessPiece> createWhitePieces(int random)
@@ -149,6 +149,7 @@ public class OneBoardFactory implements IBoardFactory
 	
 	/**
 	 * Implementation of createBlackPieces for an IBoardFactory
+	 * @param random int random integer used to determined orientation of chessboard.
 	 */
 	@Override
 	public ArrayList<ChessPiece> createBlackPieces(int random)
@@ -251,9 +252,13 @@ public class OneBoardFactory implements IBoardFactory
 
 	/**
 	 * A method that implements populateSquares for an IBoardFactory
+	 * @param board the 2-D array of Squares used to represent the chessboard.
+	 * @param white ArrayList of white ChessPiece objects.
+	 * @param black ArrayList of black ChessPiece objects.
+	 * @param random int random integer used to determined orientation of chessboard.
 	 */
 	@Override
-	public void populateSquares(Square[][] board, ArrayList<ChessPiece> white, ArrayList<ChessPiece> black, int random) throws FriendlyCollisionException
+	public void populateSquares(Square[][] board, ArrayList<ChessPiece> white, ArrayList<ChessPiece> black, int random)
 	{
 		if(random == 0)
 		{
