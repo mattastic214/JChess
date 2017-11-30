@@ -32,6 +32,10 @@ public class View implements ActionListener
 	private JPanel panel;
 	private Square[][] set;
 	
+	/**
+	 * This part of the code is used by repaint method to display our Chessboard.
+	 * @author matta, charles
+	 */
 	@SuppressWarnings("serial")
 	private class MyPanel extends JPanel
 	{
@@ -64,10 +68,10 @@ public class View implements ActionListener
 	} 
 	
 	/**
-	 * Adds a Controller argument to the View object
+	 * Adds a Controller argument to the View object.
 	 * Note: Here is where each Square has an actionListener added to it.
-	 * The actionListener is the controller
-	 * @param controller
+	 * The controller implements an actionListener.
+	 * @param controller The Controller object.
 	 */
 	public void addController(Controller controller)
 	{
@@ -82,8 +86,8 @@ public class View implements ActionListener
 	}
 	
 	/**
-	 * Adds a Model argument to a View object
-	 * @param model
+	 * Adds a Model argument to a View object.
+	 * @param model The Model object.
 	 */
 	public void addModel(Model model)
 	{
@@ -112,7 +116,7 @@ public class View implements ActionListener
 	}
 	
 	/**
-	 * Repaints the frame/GUI every time an ActionEvent is received.
+	 * Repaints the frame/GUI every so and then by the Timer object.
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e)
