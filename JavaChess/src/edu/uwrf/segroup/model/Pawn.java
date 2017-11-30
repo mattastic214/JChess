@@ -1,6 +1,6 @@
 package edu.uwrf.segroup.model;
 
-import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
+//import edu.uwrf.segroup.model.exceptions.FriendlyCollisionException;
 
 /**
  * The Pawn Piece which extends the ChessPiece object.
@@ -11,10 +11,8 @@ public class Pawn extends ChessPiece {
 
 	/**
 	 * The constructor of the Pawn class.
-	 * @param setTeam
-	 * 				Side Object to set Team of the Pawn.
-	 * @param imagePath
-	 * 				The image to display the Pawn
+	 * @param setTeam Sets the ChessPiece team to either WHITE or BLACK enum type
+	 * @param imagePath The path of the image that is used to represent the ChessPiece.
 	 * @author matta, charles
 	 */
 	public Pawn(Side setTeam, String imagePath) {

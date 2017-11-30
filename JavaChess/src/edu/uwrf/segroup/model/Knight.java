@@ -9,10 +9,8 @@ public class Knight extends ChessPiece {
 
 	/**
 	 * The constructor of the Knight class.
-	 * @param setTeam
-	 * 				Side Object to set Team of the Knight.
-	 * @param imagePath
-	 * 				The image to display the Knight
+	 * @param setTeam Sets the ChessPiece team to either WHITE or BLACK enum type
+	 * @param imagePath The path of the image that is used to represent the ChessPiece.
 	 * @author matta, charles
 	 */
 	public Knight(Side setTeam, String imagePath) {

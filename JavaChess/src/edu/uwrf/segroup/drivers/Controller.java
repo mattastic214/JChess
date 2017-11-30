@@ -14,6 +14,9 @@ import javax.swing.event.ChangeListener;
 import edu.uwrf.segroup.model.Model;
 import edu.uwrf.segroup.model.Settings;
 
+/**
+ * The Controller class.
+ */
 public class Controller implements ActionListener
 {
 	
@@ -29,8 +32,8 @@ public class Controller implements ActionListener
 	}
 	
 	/**
-	 * Adds a Model argument to a controller object
-	 * @param m
+	 * Adds a Model argument to a controller object.
+	 * @param m Model object.
 	 */
 	public void addModel(Model m)
 	{
@@ -40,8 +43,8 @@ public class Controller implements ActionListener
 	}
 	
 	/**
-	 * Adds a View argument to a controller object
-	 * @param v
+	 * Adds a View argument to a controller object.
+	 * @param v View object.
 	 */
 	public void addView(View v)
 	{
@@ -52,6 +55,10 @@ public class Controller implements ActionListener
 	
 	// When a JButton/Square is pressed its flag is set to either true or false based on its
 	// previous value.
+	/**
+	 * The actionPerformed method that overrides the ActionListener.
+	 * @param arg0 ActionEvent object used to detect button Presses.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0)
 	{

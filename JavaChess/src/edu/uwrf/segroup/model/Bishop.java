@@ -1,9 +1,7 @@
 package edu.uwrf.segroup.model;
 
-import edu.uwrf.segroup.model.exceptions.SendBackException;
-
 /**
- * The constructor of the Bishop class.
+ * The Bishop object which extends ChessPiece object.
  * @author matta, charles
  */
 public class Bishop extends ChessPiece
@@ -11,10 +9,8 @@ public class Bishop extends ChessPiece
 
 	/**
 	 * The constructor of the Bishop class.
-	 * @param setTeam
-	 * 				Side Object to set Team of the Bishop.
-	 * @param imagePath
-	 * 				The image to display the Bishop
+	 * @param setTeam Sets the ChessPiece team to either WHITE or BLACK enum type
+	 * @param imagePath The path of the image that is used to represent the ChessPiece.
 	 * @author matta, charles
 	 */
 	public Bishop(Side setTeam, String imagePath) {

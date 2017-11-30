@@ -9,10 +9,8 @@ public class Queen extends ChessPiece {
 
 	/**
 	 * The constructor of the Queen class.
-	 * @param setTeam
-	 * 				Side Object to set Team of the Queen.
-	 * @param imagePath
-	 * 				The image to display the Queen.
+	 * @param setTeam Sets the ChessPiece team to either WHITE or BLACK enum type
+	 * @param imagePath The path of the image that is used to represent the ChessPiece.
 	 * @author matta, charles
 	 */
 	public Queen(Side setTeam, String imagePath) {
